@@ -1,0 +1,972 @@
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePhotos (20100617032940)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "size" integer, "content_type" varchar(255), "filename" varchar(255), "height" integer, "width" integer, "parent_id" integer, "thumbnail" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100617032940')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("photos")[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-06-17 14:37:18) [GET]
+  [4;36;1mPhoto Load (0.5ms)[0m   [0;1mSELECT * FROM "photos" [0m
+Rendering template within layouts/photos
+Rendering photos/index
+Completed in 39ms (View: 36, DB: 0) | 200 OK [http://localhost/photos]
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2010-06-17 14:37:55) [GET]
+
+SyntaxError (/Users/adw/rails/lizzie02/app/models/photo.rb:3: syntax error, unexpected tASSOC, expecting kEND
+    :content_type => :image
+                    ^
+/Users/adw/rails/lizzie02/app/models/photo.rb:4: syntax error, unexpected tASSOC, expecting kEND
+    :thumbnails => { :thumb => '100x100>' }
+                  ^):
+  app/controllers/photos_controller.rb:27:in `new'
+
+Rendered rescues/_trace (36.1ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2010-06-17 16:01:02) [GET]
+
+SyntaxError (/Users/adw/rails/lizzie02/app/models/photo.rb:3: syntax error, unexpected tASSOC, expecting kEND
+    :content_type => :image
+                    ^
+/Users/adw/rails/lizzie02/app/models/photo.rb:4: syntax error, unexpected tASSOC, expecting kEND
+    :thumbnails => { :thumb => '100x100>' }
+                  ^):
+  app/controllers/photos_controller.rb:27:in `new'
+
+Rendered rescues/_trace (84.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2010-06-17 20:23:47) [GET]
+
+SyntaxError (/Users/adw/rails/lizzie02/app/models/photo.rb:3: syntax error, unexpected tASSOC, expecting kEND
+    :content_type => :image
+                    ^
+/Users/adw/rails/lizzie02/app/models/photo.rb:4: syntax error, unexpected tASSOC, expecting kEND
+    :thumbnails => { :thumb => '100x100>' }
+                  ^):
+  app/controllers/photos_controller.rb:27:in `new'
+
+Rendered rescues/_trace (35.7ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2010-06-17 20:25:25) [GET]
+
+SyntaxError (/Users/adw/rails/lizzie02/app/models/photo.rb:3: syntax error, unexpected tASSOC, expecting kEND
+    :content_type => :image,
+                    ^):
+  app/controllers/photos_controller.rb:27:in `new'
+
+Rendered rescues/_trace (36.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2010-06-17 20:25:34) [GET]
+Rendering template within layouts/photos
+Rendering photos/new
+Completed in 558ms (View: 14, DB: 0) | 200 OK [http://localhost/photos/new]
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2010-06-17 20:27:39) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/var/folders/UW/UWUhjpwbEIitIEhsSVKdHk+++TI/-Tmp-/RackMultipart28297-0>}, "commit"=>"Create", "authenticity_token"=>"O63KxOez/TwpuMdm06/9692/VS0VKxagDg/XLl51hfA="}
+  [4;36;1mPhoto Create (0.5ms)[0m   [0;1mINSERT INTO "photos" ("size", "created_at", "content_type", "thumbnail", "updated_at", "filename", "height", "parent_id", "width") VALUES(262438, '2010-06-17 10:27:39', 'image/jpeg', NULL, '2010-06-17 10:27:39', 'barashki_1152.jpg', 864, NULL, 1152)[0m
+  [4;35;1mPhoto Load (0.1ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."parent_id" = 1 AND "photos"."thumbnail" = 'thumb') LIMIT 1[0m
+  [4;36;1mPhoto Create (0.1ms)[0m   [0;1mINSERT INTO "photos" ("size", "created_at", "content_type", "thumbnail", "updated_at", "filename", "height", "parent_id", "width") VALUES(262438, '2010-06-17 10:27:39', 'image/jpeg', 'thumb', '2010-06-17 10:27:39', 'barashki_1152_thumb.jpg', 75, 1, 100)[0m
+
+ActiveRecord::StatementInvalid (Could not find table 'db_files'):
+  app/controllers/photos_controller.rb:46:in `create'
+  app/controllers/photos_controller.rb:45:in `create'
+
+Rendered rescues/_trace (106.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePhotos (20100617032940)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("photos")[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2010-06-17 20:30:09) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/var/folders/UW/UWUhjpwbEIitIEhsSVKdHk+++TI/-Tmp-/RackMultipart28297-1>}, "commit"=>"Create", "authenticity_token"=>"O63KxOez/TwpuMdm06/9692/VS0VKxagDg/XLl51hfA="}
+  [4;35;1mPhoto Create (0.4ms)[0m   [0mINSERT INTO "photos" ("size", "created_at", "content_type", "thumbnail", "updated_at", "filename", "height", "parent_id", "width") VALUES(262438, '2010-06-17 10:30:09', 'image/jpeg', NULL, '2010-06-17 10:30:09', 'barashki_1152.jpg', 864, NULL, 1152)[0m
+  [4;36;1mPhoto Load (0.1ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."parent_id" = 1 AND "photos"."thumbnail" = 'thumb') LIMIT 1[0m
+  [4;35;1mPhoto Create (0.2ms)[0m   [0mINSERT INTO "photos" ("size", "created_at", "content_type", "thumbnail", "updated_at", "filename", "height", "parent_id", "width") VALUES(262438, '2010-06-17 10:30:09', 'image/jpeg', 'thumb', '2010-06-17 10:30:09', 'barashki_1152_thumb.jpg', 75, 1, 100)[0m
+
+ActiveRecord::StatementInvalid (Could not find table 'db_files'):
+  app/controllers/photos_controller.rb:46:in `create'
+  app/controllers/photos_controller.rb:45:in `create'
+
+Rendered rescues/_trace (113.0ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2010-06-17 20:35:40) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/var/folders/UW/UWUhjpwbEIitIEhsSVKdHk+++TI/-Tmp-/RackMultipart28405-0>}, "commit"=>"Create", "authenticity_token"=>"O63KxOez/TwpuMdm06/9692/VS0VKxagDg/XLl51hfA="}
+  [4;36;1mPhoto Create (0.4ms)[0m   [0;1mINSERT INTO "photos" ("size", "created_at", "content_type", "thumbnail", "updated_at", "filename", "height", "parent_id", "width") VALUES(262438, '2010-06-17 10:35:40', 'image/jpeg', NULL, '2010-06-17 10:35:40', 'barashki_1152.jpg', 864, NULL, 1152)[0m
+  [4;35;1mPhoto Load (0.1ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."parent_id" = 1 AND "photos"."thumbnail" = 'thumb') LIMIT 1[0m
+  [4;36;1mPhoto Create (0.2ms)[0m   [0;1mINSERT INTO "photos" ("size", "created_at", "content_type", "thumbnail", "updated_at", "filename", "height", "parent_id", "width") VALUES(262438, '2010-06-17 10:35:40', 'image/jpeg', 'thumb', '2010-06-17 10:35:40', 'barashki_1152_thumb.jpg', 75, 1, 100)[0m
+
+ActiveRecord::StatementInvalid (Could not find table 'db_files'):
+  app/controllers/photos_controller.rb:46:in `create'
+  app/controllers/photos_controller.rb:45:in `create'
+
+Rendered rescues/_trace (109.0ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2010-06-17 20:40:14) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/var/folders/UW/UWUhjpwbEIitIEhsSVKdHk+++TI/-Tmp-/RackMultipart28405-1>}, "commit"=>"Create", "authenticity_token"=>"O63KxOez/TwpuMdm06/9692/VS0VKxagDg/XLl51hfA="}
+  [4;35;1mPhoto Create (0.4ms)[0m   [0mINSERT INTO "photos" ("size", "created_at", "content_type", "thumbnail", "updated_at", "filename", "height", "parent_id", "width") VALUES(262438, '2010-06-17 10:40:14', 'image/jpeg', NULL, '2010-06-17 10:40:14', 'barashki_1152.jpg', 864, NULL, 1152)[0m
+  [4;36;1mPhoto Load (0.1ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."parent_id" = 1 AND "photos"."thumbnail" = 'thumb') LIMIT 1[0m
+  [4;35;1mPhoto Create (0.1ms)[0m   [0mINSERT INTO "photos" ("size", "created_at", "content_type", "thumbnail", "updated_at", "filename", "height", "parent_id", "width") VALUES(262438, '2010-06-17 10:40:15', 'image/jpeg', 'thumb', '2010-06-17 10:40:15', 'barashki_1152_thumb.jpg', 75, 1, 100)[0m
+Redirected to http://localhost:3000/photos/1
+Completed in 159ms (DB: 1) | 302 Found [http://localhost/photos]
+
+
+Processing PhotosController#show (for 127.0.0.1 at 2010-06-17 20:40:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."id" = 1) [0m
+Rendering template within layouts/photos
+Rendering photos/show
+Completed in 29ms (View: 13, DB: 0) | 200 OK [http://localhost/photos/1]
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-06-17 20:40:17) [GET]
+  [4;35;1mPhoto Load (0.6ms)[0m   [0mSELECT * FROM "photos" [0m
+Rendering template within layouts/photos
+Rendering photos/index
+Completed in 68ms (View: 7, DB: 1) | 200 OK [http://localhost/photos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:40:17) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0001/barashki_1152_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2010-06-17 20:40:21) [GET]
+Rendering template within layouts/photos
+Rendering photos/new
+Completed in 19ms (View: 5, DB: 0) | 200 OK [http://localhost/photos/new]
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2010-06-17 20:40:32) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/var/folders/UW/UWUhjpwbEIitIEhsSVKdHk+++TI/-Tmp-/RackMultipart28405-2>}, "commit"=>"Create", "authenticity_token"=>"O63KxOez/TwpuMdm06/9692/VS0VKxagDg/XLl51hfA="}
+  [4;36;1mPhoto Create (0.4ms)[0m   [0;1mINSERT INTO "photos" ("size", "created_at", "content_type", "thumbnail", "updated_at", "filename", "height", "parent_id", "width") VALUES(425116, '2010-06-17 10:40:32', 'image/jpeg', NULL, '2010-06-17 10:40:32', 'blueseadragon_1280.jpg', 1024, NULL, 1280)[0m
+  [4;35;1mPhoto Load (0.1ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."parent_id" = 3 AND "photos"."thumbnail" = 'thumb') LIMIT 1[0m
+  [4;36;1mPhoto Create (0.1ms)[0m   [0;1mINSERT INTO "photos" ("size", "created_at", "content_type", "thumbnail", "updated_at", "filename", "height", "parent_id", "width") VALUES(425116, '2010-06-17 10:40:32', 'image/jpeg', 'thumb', '2010-06-17 10:40:32', 'blueseadragon_1280_thumb.jpg', 80, 3, 100)[0m
+Redirected to http://localhost:3000/photos/3
+Completed in 176ms (DB: 1) | 302 Found [http://localhost/photos]
+
+
+Processing PhotosController#show (for 127.0.0.1 at 2010-06-17 20:40:32) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" = 3) [0m
+Rendering template within layouts/photos
+Rendering photos/show
+Completed in 67ms (View: 52, DB: 0) | 200 OK [http://localhost/photos/3]
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-06-17 20:40:34) [GET]
+  [4;36;1mPhoto Load (0.7ms)[0m   [0;1mSELECT * FROM "photos" [0m
+Rendering template within layouts/photos
+Rendering photos/index
+Completed in 20ms (View: 6, DB: 1) | 200 OK [http://localhost/photos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:40:34) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0001/barashki_1152_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:40:34) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0003/blueseadragon_1280_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-06-17 20:41:14) [GET]
+  [4;35;1mPhoto Load (0.7ms)[0m   [0mSELECT * FROM "photos" [0m
+Rendering template within layouts/photos
+Rendering photos/index
+Completed in 22ms (View: 8, DB: 1) | 200 OK [http://localhost/photos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:41:14) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0001/barashki_1152_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:41:14) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0003/blueseadragon_1280_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-06-17 20:41:17) [GET]
+  [4;36;1mPhoto Load (0.7ms)[0m   [0;1mSELECT * FROM "photos" [0m
+Rendering template within layouts/photos
+Rendering photos/index
+Completed in 62ms (View: 5, DB: 1) | 200 OK [http://localhost/photos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:41:17) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0001/barashki_1152_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:41:17) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0003/blueseadragon_1280_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-06-17 20:41:18) [GET]
+  [4;35;1mPhoto Load (0.7ms)[0m   [0mSELECT * FROM "photos" [0m
+Rendering template within layouts/photos
+Rendering photos/index
+Completed in 19ms (View: 5, DB: 1) | 200 OK [http://localhost/photos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:41:18) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0001/barashki_1152_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:41:18) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0003/blueseadragon_1280_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-06-17 20:41:19) [GET]
+  [4;36;1mPhoto Load (0.7ms)[0m   [0;1mSELECT * FROM "photos" [0m
+Rendering template within layouts/photos
+Rendering photos/index
+Completed in 20ms (View: 6, DB: 1) | 200 OK [http://localhost/photos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:41:19) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0001/barashki_1152_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:41:19) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0003/blueseadragon_1280_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2010-06-17 20:41:23) [GET]
+Rendering template within layouts/photos
+Rendering photos/new
+Completed in 17ms (View: 2, DB: 0) | 200 OK [http://localhost/photos/new]
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2010-06-17 20:41:32) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/var/folders/UW/UWUhjpwbEIitIEhsSVKdHk+++TI/-Tmp-/RackMultipart28405-1>}, "commit"=>"Create", "authenticity_token"=>"O63KxOez/TwpuMdm06/9692/VS0VKxagDg/XLl51hfA="}
+  [4;35;1mPhoto Create (0.4ms)[0m   [0mINSERT INTO "photos" ("size", "created_at", "content_type", "thumbnail", "updated_at", "filename", "height", "parent_id", "width") VALUES(210206, '2010-06-17 10:41:32', 'image/jpeg', NULL, '2010-06-17 10:41:32', 'hart_1024.jpg', 768, NULL, 1024)[0m
+  [4;36;1mPhoto Load (0.1ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."parent_id" = 5 AND "photos"."thumbnail" = 'thumb') LIMIT 1[0m
+  [4;35;1mPhoto Create (0.1ms)[0m   [0mINSERT INTO "photos" ("size", "created_at", "content_type", "thumbnail", "updated_at", "filename", "height", "parent_id", "width") VALUES(210206, '2010-06-17 10:41:33', 'image/jpeg', 'thumb', '2010-06-17 10:41:33', 'hart_1024_thumb.jpg', 75, 5, 100)[0m
+Redirected to http://localhost:3000/photos/5
+Completed in 110ms (DB: 1) | 302 Found [http://localhost/photos]
+
+
+Processing PhotosController#show (for 127.0.0.1 at 2010-06-17 20:41:33) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."id" = 5) [0m
+Rendering template within layouts/photos
+Rendering photos/show
+Completed in 17ms (View: 3, DB: 0) | 200 OK [http://localhost/photos/5]
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-06-17 20:41:34) [GET]
+  [4;35;1mPhoto Load (0.8ms)[0m   [0mSELECT * FROM "photos" [0m
+Rendering template within layouts/photos
+Rendering photos/index
+Completed in 21ms (View: 6, DB: 1) | 200 OK [http://localhost/photos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:41:34) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0001/barashki_1152_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:41:34) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0003/blueseadragon_1280_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:41:34) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0005/hart_1024_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-06-17 20:43:10) [GET]
+  [4;36;1mPhoto Load (0.9ms)[0m   [0;1mSELECT * FROM "photos" [0m
+Rendering template within layouts/photos
+Rendering photos/index
+Completed in 24ms (View: 9, DB: 1) | 200 OK [http://localhost/photos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:43:10) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0001/barashki_1152_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:43:10) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0003/blueseadragon_1280_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:43:10) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0005/hart_1024_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-06-17 20:43:48) [GET]
+  [4;35;1mPhoto Load (0.9ms)[0m   [0mSELECT * FROM "photos" [0m
+Rendering template within layouts/photos
+Rendering photos/index
+Completed in 67ms (View: 10, DB: 1) | 200 OK [http://localhost/photos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:43:49) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0001/barashki_1152_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:43:49) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0003/blueseadragon_1280_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:43:49) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0005/hart_1024_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-06-17 20:44:03) [GET]
+  [4;36;1mPhoto Load (0.9ms)[0m   [0;1mSELECT * FROM "photos" [0m
+Rendering template within layouts/photos
+Rendering photos/index
+Completed in 24ms (View: 9, DB: 1) | 200 OK [http://localhost/photos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:44:04) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0001/barashki_1152_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:44:04) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0003/blueseadragon_1280_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:44:04) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0005/hart_1024_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-06-17 20:46:50) [GET]
+  [4;35;1mPhoto Load (0.9ms)[0m   [0mSELECT * FROM "photos" [0m
+Rendering template within layouts/photos
+Rendering photos/index
+Completed in 37ms (View: 10, DB: 1) | 200 OK [http://localhost/photos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:46:50) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0001/barashki_1152_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:46:50) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0003/blueseadragon_1280_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 20:46:50) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0005/hart_1024_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-06-17 20:47:48) [GET]
+  [4;36;1mPhoto Load (0.9ms)[0m   [0;1mSELECT * FROM "photos" [0m
+Rendering template within layouts/photos
+Rendering photos/index
+
+ActionView::TemplateError (undefined method `photo' for #<ActionView::Base:0x101ef91b8>) on line #3 of app/views/photos/index.html.erb:
+1: <h1>Photo</h1>
+2: <% for photo in @photos -%>
+3:   <%= link_to image_tag(photo(:thumb)), photo.public_filename %>
+4:   <br><br>
+5: <% end -%>
+6: 
+
+    app/views/photos/index.html.erb:3
+    app/views/photos/index.html.erb:2:in `each'
+    app/views/photos/index.html.erb:2
+    app/controllers/photos_controller.rb:7:in `index'
+
+Rendered rescues/_trace (86.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-06-17 20:47:59) [GET]
+  [4;35;1mPhoto Load (0.8ms)[0m   [0mSELECT * FROM "photos" [0m
+Rendering template within layouts/photos
+Rendering photos/index
+Completed in 24ms (View: 10, DB: 1) | 200 OK [http://localhost/photos]
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2010-06-17 21:32:37) [GET]
+Rendering template within layouts/photos
+Rendering photos/new
+Completed in 354ms (View: 3, DB: 0) | 200 OK [http://localhost/photos/new]
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2010-06-17 21:32:52) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/var/folders/UW/UWUhjpwbEIitIEhsSVKdHk+++TI/-Tmp-/RackMultipart28405-2>}, "commit"=>"Create", "authenticity_token"=>"O63KxOez/TwpuMdm06/9692/VS0VKxagDg/XLl51hfA="}
+  [4;36;1mPhoto Create (0.4ms)[0m   [0;1mINSERT INTO "photos" ("size", "created_at", "content_type", "thumbnail", "updated_at", "filename", "height", "parent_id", "width") VALUES(152746, '2010-06-17 11:32:52', 'image/jpeg', NULL, '2010-06-17 11:32:52', 'mebg_1024.jpg', 768, NULL, 1024)[0m
+  [4;35;1mPhoto Load (0.1ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."parent_id" = 7 AND "photos"."thumbnail" = 'thumb') LIMIT 1[0m
+  [4;36;1mPhoto Create (0.1ms)[0m   [0;1mINSERT INTO "photos" ("size", "created_at", "content_type", "thumbnail", "updated_at", "filename", "height", "parent_id", "width") VALUES(152746, '2010-06-17 11:32:53', 'image/jpeg', 'thumb', '2010-06-17 11:32:53', 'mebg_1024_thumb.jpg', 38, 7, 50)[0m
+Redirected to http://localhost:3000/photos/7
+Completed in 169ms (DB: 1) | 302 Found [http://localhost/photos]
+
+
+Processing PhotosController#show (for 127.0.0.1 at 2010-06-17 21:32:53) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" = 7) [0m
+Rendering template within layouts/photos
+Rendering photos/show
+Completed in 18ms (View: 3, DB: 0) | 200 OK [http://localhost/photos/7]
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-06-17 21:32:54) [GET]
+  [4;36;1mPhoto Load (1.0ms)[0m   [0;1mSELECT * FROM "photos" [0m
+Rendering template within layouts/photos
+Rendering photos/index
+Completed in 22ms (View: 7, DB: 1) | 200 OK [http://localhost/photos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 21:32:54) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0001/barashki_1152_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 21:32:54) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0003/blueseadragon_1280_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 21:32:54) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0007/mebg_1024_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 21:32:54) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0005/hart_1024_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2010-06-17 21:35:26) [GET]
+Rendering template within layouts/photos
+Rendering photos/new
+Completed in 17ms (View: 2, DB: 0) | 200 OK [http://localhost/photos/new]
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2010-06-17 21:35:34) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/var/folders/UW/UWUhjpwbEIitIEhsSVKdHk+++TI/-Tmp-/RackMultipart28405-1>}, "commit"=>"Create", "authenticity_token"=>"O63KxOez/TwpuMdm06/9692/VS0VKxagDg/XLl51hfA="}
+  [4;35;1mPhoto Create (0.4ms)[0m   [0mINSERT INTO "photos" ("size", "created_at", "content_type", "thumbnail", "updated_at", "filename", "height", "parent_id", "width") VALUES(481704, '2010-06-17 11:35:34', 'image/jpeg', NULL, '2010-06-17 11:35:34', 'Koala-Beach_1280.jpg', 1024, NULL, 1280)[0m
+  [4;36;1mPhoto Load (0.1ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."parent_id" = 9 AND "photos"."thumbnail" = 'thumb') LIMIT 1[0m
+  [4;35;1mPhoto Create (0.2ms)[0m   [0mINSERT INTO "photos" ("size", "created_at", "content_type", "thumbnail", "updated_at", "filename", "height", "parent_id", "width") VALUES(481704, '2010-06-17 11:35:34', 'image/jpeg', 'thumb', '2010-06-17 11:35:34', 'Koala-Beach_1280_thumb.jpg', 40, 9, 50)[0m
+Redirected to http://localhost:3000/photos
+Completed in 172ms (DB: 1) | 302 Found [http://localhost/photos]
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-06-17 21:35:34) [GET]
+  [4;36;1mPhoto Load (1.2ms)[0m   [0;1mSELECT * FROM "photos" [0m
+Rendering template within layouts/photos
+Rendering photos/index
+Completed in 23ms (View: 8, DB: 1) | 200 OK [http://localhost/photos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 21:35:34) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0001/barashki_1152_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 21:35:34) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0003/blueseadragon_1280_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 21:35:34) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0005/hart_1024_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 21:35:34) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0007/mebg_1024_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 21:35:34) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0009/Koala-Beach_1280_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-06-18 12:05:15) [GET]
+  [4;36;1mPhoto Load (1.5ms)[0m   [0;1mSELECT * FROM "photos" [0m
+Rendering template within layouts/photos
+Rendering photos/index
+Completed in 1196ms (View: 42, DB: 1) | 200 OK [http://localhost/photos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 12:05:16) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0001/barashki_1152_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 12:05:16) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0003/blueseadragon_1280_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 12:05:16) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0005/hart_1024_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 12:05:16) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0007/mebg_1024_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 12:05:16) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0009/Koala-Beach_1280_thumb_thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePhotos (20100617032940)
+Migrating to CreatePics (20100618022400)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "pics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "display" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100618022400')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("photos")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("pics")[0m
+
+
+Processing PicsController#index (for 127.0.0.1 at 2010-06-18 12:24:42) [GET]
+  [4;35;1mPic Load (0.3ms)[0m   [0mSELECT * FROM "pics" [0m
+Rendering template within layouts/pics
+Rendering pics/index
+Completed in 14ms (View: 11, DB: 0) | 200 OK [http://localhost/pics]
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-06-18 12:24:50) [GET]
+
+NameError (uninitialized constant Technoweenie::AttachmentFu::Processors::ImageScienceProcessor):
+  app/models/photo.rb:4
+  app/controllers/photos_controller.rb:5:in `index'
+
+Rendered rescues/_trace (85.1ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PicsController#index (for 127.0.0.1 at 2010-06-18 12:26:38) [GET]
+  [4;36;1mPic Load (0.4ms)[0m   [0;1mSELECT * FROM "pics" [0m
+Rendering template within layouts/pics
+Rendering pics/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/pics]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePhotos (20100617032940)
+Migrating to CreatePics (20100618022400)
+Migrating to AddAttachmentsPhotoToPic (20100618022716)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "pics" ADD "photo_file_name" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mALTER TABLE "pics" ADD "photo_content_type" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "pics" ADD "photo_file_size" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "pics" ADD "photo_updated_at" datetime[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100618022716')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("photos")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("pics")[0m
+
+
+Processing PicsController#new (for 127.0.0.1 at 2010-06-18 12:29:57) [GET]
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `has_attached_file' for #<Class:0x10205d540>):
+  app/models/pic.rb:2
+  app/controllers/pics_controller.rb:27:in `new'
+
+Rendered rescues/_trace (35.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PicsController#new (for 127.0.0.1 at 2010-06-18 12:30:18) [GET]
+Rendering template within layouts/pics
+Rendering pics/new
+Completed in 23ms (View: 17, DB: 0) | 200 OK [http://localhost/pics/new]
+
+
+Processing PicsController#new (for 127.0.0.1 at 2010-06-18 12:32:18) [GET]
+Rendering template within layouts/pics
+Rendering pics/new
+Rendered pics/_form (4.5ms)
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/pics/new]
+
+
+Processing PicsController#new (for 127.0.0.1 at 2010-06-18 12:34:13) [GET]
+Rendering template within layouts/pics
+Rendering pics/new
+ERROR: compiling _run_erb_app47views47pics47_form46html46erb_locals_form_object RAISED compile error
+/Users/adw/rails/lizzie02/app/views/pics/_form.html.erb:1: syntax error, unexpected ',', expecting kEND
+...mplate=true ;  form_for(@pic), :html => {:multipart => 'true...
+                              ^
+/Users/adw/rails/lizzie02/app/views/pics/_form.html.erb:1: syntax error, unexpected kDO, expecting kEND
+...l => {:multipart => 'true'} do |f| ; @output_buffer.concat "...
+                              ^
+/Users/adw/rails/lizzie02/app/views/pics/_form.html.erb:20: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_erb_app47views47pics47_form46html46erb_locals_form_object(local_assigns)
+            old_output_buffer = output_buffer;form = local_assigns[:form];object = local_assigns[:object];;@output_buffer = '';  __in_erb_template=true ;  form_for(@pic), :html => {:multipart => 'true'} do |f| ; @output_buffer.concat "\n  "
+; @output_buffer.concat(( f.error_messages ).to_s); @output_buffer.concat "\n\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.label :name ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.text_field :name ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.label :display ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.check_box :display ).to_s); @output_buffer.concat "\n  </p>\n\n  <p>\n  \t"
+
+
+
+; @output_buffer.concat(( f.file_field :photo ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.submit 'Submit' ).to_s); @output_buffer.concat "\n  </p>\n"
+
+;  end ; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/adw/rails/lizzie02/app/views/pics/_form.html.erb:20:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:20:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:19:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/partials.rb:184:in `render_partial'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:267:in `render'
+/Users/adw/rails/lizzie02/app/views/pics/new.html.erb:3:in `_run_erb_app47views47pics47new46html46erb'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:306:in `with_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:30:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:951:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `custom'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `respond'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `respond'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/adw/rails/lizzie02/app/controllers/pics_controller.rb:29:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/adw/rails/lizzie02/app/views/pics/_form.html.erb:1: syntax error, unexpected ',', expecting kEND
+...mplate=true ;  form_for(@pic), :html => {:multipart => 'true...
+                              ^
+/Users/adw/rails/lizzie02/app/views/pics/_form.html.erb:1: syntax error, unexpected kDO, expecting kEND
+...l => {:multipart => 'true'} do |f| ; @output_buffer.concat "...
+                              ^
+/Users/adw/rails/lizzie02/app/views/pics/_form.html.erb:20: syntax error, unexpected kENSURE, expecting $end) on line #1 of app/views/pics/_form.html.erb:
+1: <% form_for(@pic), :html => {:multipart => 'true'} do |f| %>
+2:   <%= f.error_messages %>
+3: 
+4:   <p>
+
+    app/views/pics/_form.html.erb:20:in `compile!'
+    app/views/pics/new.html.erb:3
+    app/controllers/pics_controller.rb:29:in `new'
+
+Rendered rescues/_trace (96.0ms)
+Rendered rescues/_request_and_response (1.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PicsController#new (for 127.0.0.1 at 2010-06-18 12:34:38) [GET]
+Rendering template within layouts/pics
+Rendering pics/new
+Rendered pics/_form (4.4ms)
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/pics/new]
