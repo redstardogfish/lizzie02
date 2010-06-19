@@ -2897,3 +2897,1312 @@ Processing MainController#contact (for 127.0.0.1 at 2010-06-19 12:20:27) [GET]
 Rendering template within layouts/application
 Rendering main/contact
 Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/contact]
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePhotos (20100617032940)
+Migrating to CreatePics (20100618022400)
+Migrating to AddAttachmentsPhotoToPic (20100618022716)
+Migrating to CreatePages (20100618090055)
+Migrating to AddVizToPic (20100619003011)
+Migrating to CreateTestimonials (20100619022818)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "testimonials" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "who" varchar(255), "quote" varchar(255), "viz" boolean, "category" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100619022818')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("photos")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("pics")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("testimonials")[0m
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 12:32:01) [GET]
+  [4;36;1mTestimonial Load (0.5ms)[0m   [0;1mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/application
+Rendering testimonials/index
+
+ActionView::TemplateError (can't convert nil into String) on line #30 of app/views/layouts/application.html.erb:
+27: 	<div id="top">
+28: 		<div id="logospace">
+29: 			<%= link_to image_tag("et_signature_trans.png", :id => "signature"), :controller => "main", :action => "index"  %><br>
+30: 			<%= link_to image_tag(@nav_icon, :id => "civcel"), :controller => "main", :action => "index"  %> <%= @page_title %>
+31: 		</div><% if @quote%>
+32: 		<div id="quote">
+33: 			“<%= @quote%>”
+
+    app/views/layouts/application.html.erb:30
+
+Rendered rescues/_trace (84.0ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PicsController#index (for 127.0.0.1 at 2010-06-19 12:32:23) [GET]
+  [4;35;1mPic Load (1.0ms)[0m   [0mSELECT * FROM "pics" [0m
+Rendering template within layouts/pics
+Rendering pics/index
+Rendered pics/_form (2.2ms)
+Completed in 130ms (View: 123, DB: 1) | 200 OK [http://localhost/pics]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 12:32:24) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 12:33:57) [GET]
+  [4;36;1mTestimonial Load (0.4ms)[0m   [0;1mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 12:33:57) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#new (for 127.0.0.1 at 2010-06-19 12:38:24) [GET]
+Rendering template within layouts/testimonials
+Rendering testimonials/new
+Rendered testimonials/_form (4.7ms)
+Completed in 16ms (View: 12, DB: 0) | 200 OK [http://localhost/testimonials/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 12:38:24) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePhotos (20100617032940)
+Migrating to CreatePics (20100618022400)
+Migrating to AddAttachmentsPhotoToPic (20100618022716)
+Migrating to CreatePages (20100618090055)
+Migrating to AddVizToPic (20100619003011)
+Migrating to CreateTestimonials (20100619022818)
+Migrating to AddWordsToTestimonials (20100619023922)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "testimonials" ADD "words" text[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100619023922')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("photos")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("pics")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("testimonials")[0m
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 12:40:20) [GET]
+  [4;35;1mTestimonial Load (0.4ms)[0m   [0mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 67ms (View: 4, DB: 0) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 12:40:20) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#new (for 127.0.0.1 at 2010-06-19 12:40:23) [GET]
+Rendering template within layouts/testimonials
+Rendering testimonials/new
+Rendered testimonials/_form (4.8ms)
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/testimonials/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 12:40:23) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#new (for 127.0.0.1 at 2010-06-19 12:40:45) [GET]
+Rendering template within layouts/testimonials
+Rendering testimonials/new
+Rendered testimonials/_form (4.7ms)
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/testimonials/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 12:40:45) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#create (for 127.0.0.1 at 2010-06-19 12:41:19) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"dvhIi3tzJR7xbiHtLY55Qmfe8QriJLxrZfPfGCoqIT4=", "testimonial"=>{"category"=>"", "words"=>"I hardly know where to start to express what a fabulous time we had on our wedding day. We couldn't believe our luck!\r\n\r\nThe process leading up to our wedding day went so smoothly. Elizabeth spent loads of time helping us write our vows, lending us a comprehensive manual of ideas and suggestions. She immediately understood what we wanted for our day and made the whole process so easy.\r\n\r\nOn our wedding day she looked fantastic, her genuine pleasure in marrying us was unmistakable, she put everyone involved at ease and she conducted the service with passion and professionalism, we could not have asked for more.\r\n\r\nLoads of our guests have commented on what a lovely warm hearted service she presented.\r\n\r\nThankyou Elizabeth you were wonderful. ", "viz"=>"1", "who"=>"Louise and Chris"}}
+WARNING: Can't mass-assign these protected attributes: words
+  [4;36;1mTestimonial Create (12.2ms)[0m   [0;1mINSERT INTO "testimonials" ("category", "created_at", "words", "updated_at", "viz", "who", "quote") VALUES('', '2010-06-19 02:41:19', NULL, '2010-06-19 02:41:19', 't', 'Louise and Chris', NULL)[0m
+Redirected to http://localhost:3000/testimonials/1
+Completed in 21ms (DB: 12) | 302 Found [http://localhost/testimonials]
+
+
+Processing TestimonialsController#show (for 127.0.0.1 at 2010-06-19 12:41:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTestimonial Load (0.2ms)[0m   [0mSELECT * FROM "testimonials" WHERE ("testimonials"."id" = 1) [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/show
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/testimonials/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 12:41:19) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 12:44:39) [GET]
+  [4;36;1mTestimonial Load (0.5ms)[0m   [0;1mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 12:44:39) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#new (for 127.0.0.1 at 2010-06-19 12:44:41) [GET]
+Rendering template within layouts/testimonials
+Rendering testimonials/new
+Rendered testimonials/_form (7.3ms)
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://localhost/testimonials/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 12:44:41) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#create (for 127.0.0.1 at 2010-06-19 12:45:22) [POST]
+  Parameters: {"category"=>"weddings", "commit"=>"Save changes", "authenticity_token"=>"dvhIi3tzJR7xbiHtLY55Qmfe8QriJLxrZfPfGCoqIT4=", "testimonial"=>{"words"=>"\r\nAngus and I feel that we made the best choice in wedding celebrant, you put us at ease from the first meeting and we felt absolute confidence that you understood what we wanted and would help to make the day as special as it was. It was good to know that it was an element of the day we did not need to worry about. Your systems for paperwork and your recommendations for vows made the process surprisingly easy.\r\n\r\nThank you for making our day such a wonderful and memorable one. Your approach, warmth and genuine interest in us, as Angus and I celebrated our feelings for one another, made us feel that we had a friend marrying us and not a stranger. ", "viz"=>"1", "who"=>"Lisa and Angus"}}
+WARNING: Can't mass-assign these protected attributes: words
+  [4;35;1mTestimonial Create (0.4ms)[0m   [0mINSERT INTO "testimonials" ("category", "created_at", "words", "updated_at", "viz", "who", "quote") VALUES(NULL, '2010-06-19 02:45:22', NULL, '2010-06-19 02:45:22', 't', 'Lisa and Angus', NULL)[0m
+Redirected to http://localhost:3000/testimonials/2
+Completed in 67ms (DB: 0) | 302 Found [http://localhost/testimonials]
+
+
+Processing TestimonialsController#show (for 127.0.0.1 at 2010-06-19 12:45:22) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mTestimonial Load (0.2ms)[0m   [0;1mSELECT * FROM "testimonials" WHERE ("testimonials"."id" = 2) [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/testimonials/2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 12:45:22) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 12:45:35) [GET]
+  [4;35;1mTestimonial Load (0.6ms)[0m   [0mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 11ms (View: 8, DB: 1) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 12:45:35) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 13:14:33) [GET]
+  [4;36;1mTestimonial Load (0.6ms)[0m   [0;1mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 15ms (View: 11, DB: 1) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 13:14:33) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 13:14:44) [GET]
+  [4;36;1mTestimonial Load (0.8ms)[0m   [0;1mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 29ms (View: 25, DB: 1) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 13:14:44) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#edit (for 127.0.0.1 at 2010-06-19 13:14:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTestimonial Load (0.3ms)[0m   [0mSELECT * FROM "testimonials" WHERE ("testimonials"."id" = 1) [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/edit
+Rendered testimonials/_form (5.2ms)
+Completed in 18ms (View: 12, DB: 0) | 200 OK [http://localhost/testimonials/1/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 13:14:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#update (for 127.0.0.1 at 2010-06-19 13:15:03) [PUT]
+  Parameters: {"category"=>"weddings", "commit"=>"Save changes", "authenticity_token"=>"dvhIi3tzJR7xbiHtLY55Qmfe8QriJLxrZfPfGCoqIT4=", "id"=>"1", "testimonial"=>{"words"=>"I hardly know where to start to express what a fabulous time we had on our wedding day. We couldn't believe our luck!\r\n\r\nThe process leading up to our wedding day went so smoothly. Elizabeth spent loads of time helping us write our vows, lending us a comprehensive manual of ideas and suggestions. She immediately understood what we wanted for our day and made the whole process so easy.\r\n\r\nOn our wedding day she looked fantastic, her genuine pleasure in marrying us was unmistakable, she put everyone involved at ease and she conducted the service with passion and professionalism, we could not have asked for more.\r\n\r\nLoads of our guests have commented on what a lovely warm hearted service she presented.\r\n\r\nThankyou Elizabeth you were wonderful. ", "viz"=>"1", "who"=>"Louise and Chris"}}
+  [4;36;1mTestimonial Load (0.2ms)[0m   [0;1mSELECT * FROM "testimonials" WHERE ("testimonials"."id" = 1) [0m
+WARNING: Can't mass-assign these protected attributes: words
+Redirected to http://localhost:3000/testimonials/1
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/testimonials/1]
+
+
+Processing TestimonialsController#show (for 127.0.0.1 at 2010-06-19 13:15:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTestimonial Load (0.2ms)[0m   [0mSELECT * FROM "testimonials" WHERE ("testimonials"."id" = 1) [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/show
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/testimonials/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 13:15:03) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 13:15:09) [GET]
+  [4;36;1mTestimonial Load (0.6ms)[0m   [0;1mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 57ms (View: 53, DB: 1) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 13:15:09) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mTestimonial Load (0.8ms)[0m   [0;1mSELECT * FROM "testimonials" [0m
+
+
+Processing TestimonialsController#destroy (for 127.0.0.1 at 2010-06-19 13:52:36) [DELETE]
+  Parameters: {"authenticity_token"=>"dvhIi3tzJR7xbiHtLY55Qmfe8QriJLxrZfPfGCoqIT4=", "id"=>"1"}
+  [4;35;1mTestimonial Load (0.2ms)[0m   [0mSELECT * FROM "testimonials" WHERE ("testimonials"."id" = 1) [0m
+  [4;36;1mTestimonial Destroy (0.3ms)[0m   [0;1mDELETE FROM "testimonials" WHERE "id" = 1[0m
+Redirected to http://localhost:3000/testimonials
+Completed in 8ms (DB: 1) | 302 Found [http://localhost/testimonials/1]
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 13:52:36) [GET]
+  [4;35;1mTestimonial Load (0.5ms)[0m   [0mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 13:52:36) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#destroy (for 127.0.0.1 at 2010-06-19 13:52:37) [DELETE]
+  Parameters: {"authenticity_token"=>"dvhIi3tzJR7xbiHtLY55Qmfe8QriJLxrZfPfGCoqIT4=", "id"=>"2"}
+  [4;36;1mTestimonial Load (0.2ms)[0m   [0;1mSELECT * FROM "testimonials" WHERE ("testimonials"."id" = 2) [0m
+  [4;35;1mTestimonial Destroy (0.3ms)[0m   [0mDELETE FROM "testimonials" WHERE "id" = 2[0m
+Redirected to http://localhost:3000/testimonials
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/testimonials/2]
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 13:52:37) [GET]
+  [4;36;1mTestimonial Load (0.4ms)[0m   [0;1mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 13:52:37) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#new (for 127.0.0.1 at 2010-06-19 13:52:39) [GET]
+Rendering template within layouts/testimonials
+Rendering testimonials/new
+Rendered testimonials/_form (3.9ms)
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/testimonials/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 13:52:39) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#create (for 127.0.0.1 at 2010-06-19 13:52:47) [POST]
+  Parameters: {"category"=>"weddings", "commit"=>"Save changes", "authenticity_token"=>"dvhIi3tzJR7xbiHtLY55Qmfe8QriJLxrZfPfGCoqIT4=", "testimonial"=>{"words"=>"test one", "viz"=>"0", "who"=>"test"}}
+WARNING: Can't mass-assign these protected attributes: words
+  [4;35;1mTestimonial Create (0.3ms)[0m   [0mINSERT INTO "testimonials" ("category", "created_at", "words", "updated_at", "viz", "who", "quote") VALUES(NULL, '2010-06-19 03:52:47', NULL, '2010-06-19 03:52:47', 'f', 'test', NULL)[0m
+Redirected to http://localhost:3000/testimonials/3
+Completed in 10ms (DB: 0) | 302 Found [http://localhost/testimonials]
+
+
+Processing TestimonialsController#show (for 127.0.0.1 at 2010-06-19 13:52:47) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mTestimonial Load (0.2ms)[0m   [0;1mSELECT * FROM "testimonials" WHERE ("testimonials"."id" = 3) [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/show
+Completed in 14ms (View: 7, DB: 0) | 200 OK [http://localhost/testimonials/3]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 13:52:47) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 13:54:20) [GET]
+  [4;35;1mTestimonial Load (0.5ms)[0m   [0mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 9ms (View: 6, DB: 1) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 13:54:20) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#new (for 127.0.0.1 at 2010-06-19 13:54:22) [GET]
+Rendering template within layouts/testimonials
+Rendering testimonials/new
+Rendered testimonials/_form (4.8ms)
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/testimonials/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 13:54:22) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#create (for 127.0.0.1 at 2010-06-19 13:54:35) [POST]
+  Parameters: {"category"=>"weddings", "commit"=>"Save changes", "authenticity_token"=>"dvhIi3tzJR7xbiHtLY55Qmfe8QriJLxrZfPfGCoqIT4=", "testimonial"=>{"words"=>"bah, humbug", "viz"=>"0", "who"=>"test2"}}
+WARNING: Can't mass-assign these protected attributes: words
+  [4;36;1mTestimonial Create (0.4ms)[0m   [0;1mINSERT INTO "testimonials" ("category", "created_at", "words", "updated_at", "viz", "who", "quote") VALUES(NULL, '2010-06-19 03:54:35', NULL, '2010-06-19 03:54:35', 'f', 'test2', NULL)[0m
+Redirected to http://localhost:3000/testimonials/4
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/testimonials]
+
+
+Processing TestimonialsController#show (for 127.0.0.1 at 2010-06-19 13:54:35) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mTestimonial Load (0.2ms)[0m   [0mSELECT * FROM "testimonials" WHERE ("testimonials"."id" = 4) [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/show
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/testimonials/4]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 13:54:35) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mTestimonial Load (0.5ms)[0m   [0mSELECT * FROM "testimonials" [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePhotos (20100617032940)
+Migrating to CreatePics (20100618022400)
+Migrating to AddAttachmentsPhotoToPic (20100618022716)
+Migrating to CreatePages (20100618090055)
+Migrating to AddVizToPic (20100619003011)
+Migrating to CreateTestimonials (20100619022818)
+Migrating to AddWordsToTestimonials (20100619023922)
+Migrating to RemoveQuoteFromTestimonial (20100619035643)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TEMPORARY TABLE "altered_testimonials" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "who" varchar(255), "quote" varchar(255), "viz" boolean, "category" varchar(255), "created_at" datetime, "updated_at" datetime, "words" text) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("testimonials")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mDROP TABLE "testimonials"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "testimonials" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "who" varchar(255), "viz" boolean, "category" varchar(255), "created_at" datetime, "updated_at" datetime, "words" text) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("altered_testimonials")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDROP TABLE "altered_testimonials"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100619035643')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("pages")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("photos")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("pics")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("testimonials")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePhotos (20100617032940)
+Migrating to CreatePics (20100618022400)
+Migrating to AddAttachmentsPhotoToPic (20100618022716)
+Migrating to CreatePages (20100618090055)
+Migrating to AddVizToPic (20100619003011)
+Migrating to CreateTestimonials (20100619022818)
+Migrating to AddWordsToTestimonials (20100619023922)
+Migrating to RemoveQuoteFromTestimonial (20100619035643)
+Migrating to AddQuoteToTestimonial (20100619035755)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "testimonials" ADD "quote" text[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100619035755')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("photos")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("pics")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("testimonials")[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePhotos (20100617032940)
+Migrating to CreatePics (20100618022400)
+Migrating to AddAttachmentsPhotoToPic (20100618022716)
+Migrating to CreatePages (20100618090055)
+Migrating to AddVizToPic (20100619003011)
+Migrating to CreateTestimonials (20100619022818)
+Migrating to AddWordsToTestimonials (20100619023922)
+Migrating to RemoveQuoteFromTestimonial (20100619035643)
+Migrating to AddQuoteToTestimonial (20100619035755)
+Migrating to RemoveWordsFromTestimonial (20100619035913)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TEMPORARY TABLE "altered_testimonials" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "who" varchar(255), "viz" boolean, "category" varchar(255), "created_at" datetime, "updated_at" datetime, "words" text, "quote" text) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("testimonials")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mDROP TABLE "testimonials"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "testimonials" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "who" varchar(255), "viz" boolean, "category" varchar(255), "created_at" datetime, "updated_at" datetime, "quote" text) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("altered_testimonials")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDROP TABLE "altered_testimonials"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100619035913')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("pages")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("photos")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("pics")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("testimonials")[0m
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 14:00:11) [GET]
+  [4;36;1mTestimonial Load (0.5ms)[0m   [0;1mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 16ms (View: 12, DB: 1) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:00:11) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#destroy (for 127.0.0.1 at 2010-06-19 14:00:21) [DELETE]
+  Parameters: {"authenticity_token"=>"dvhIi3tzJR7xbiHtLY55Qmfe8QriJLxrZfPfGCoqIT4=", "id"=>"3"}
+  [4;35;1mTestimonial Load (46.4ms)[0m   [0mSELECT * FROM "testimonials" WHERE ("testimonials"."id" = 3) [0m
+  [4;36;1mTestimonial Destroy (0.3ms)[0m   [0;1mDELETE FROM "testimonials" WHERE "id" = 3[0m
+Redirected to http://localhost:3000/testimonials
+Completed in 55ms (DB: 47) | 302 Found [http://localhost/testimonials/3]
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 14:00:21) [GET]
+  [4;35;1mTestimonial Load (0.6ms)[0m   [0mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:00:21) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#destroy (for 127.0.0.1 at 2010-06-19 14:00:23) [DELETE]
+  Parameters: {"authenticity_token"=>"dvhIi3tzJR7xbiHtLY55Qmfe8QriJLxrZfPfGCoqIT4=", "id"=>"4"}
+  [4;36;1mTestimonial Load (0.2ms)[0m   [0;1mSELECT * FROM "testimonials" WHERE ("testimonials"."id" = 4) [0m
+  [4;35;1mTestimonial Destroy (38.0ms)[0m   [0mDELETE FROM "testimonials" WHERE "id" = 4[0m
+Redirected to http://localhost:3000/testimonials
+Completed in 210ms (DB: 38) | 302 Found [http://localhost/testimonials/4]
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 14:00:23) [GET]
+  [4;36;1mTestimonial Load (0.4ms)[0m   [0;1mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:00:23) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#new (for 127.0.0.1 at 2010-06-19 14:00:24) [GET]
+Rendering template within layouts/testimonials
+Rendering testimonials/new
+Rendered testimonials/_form (4.9ms)
+Completed in 59ms (View: 55, DB: 0) | 200 OK [http://localhost/testimonials/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:00:24) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#create (for 127.0.0.1 at 2010-06-19 14:00:36) [POST]
+  Parameters: {"category"=>"weddings", "commit"=>"Save changes", "authenticity_token"=>"dvhIi3tzJR7xbiHtLY55Qmfe8QriJLxrZfPfGCoqIT4=", "testimonial"=>{"viz"=>"0", "quote"=>"hubbub", "who"=>"test2"}}
+  [4;35;1mTestimonial Create (14.2ms)[0m   [0mINSERT INTO "testimonials" ("category", "created_at", "updated_at", "viz", "who", "quote") VALUES(NULL, '2010-06-19 04:00:36', '2010-06-19 04:00:36', 'f', 'test2', 'hubbub')[0m
+Redirected to http://localhost:3000/testimonials/5
+Completed in 179ms (DB: 14) | 302 Found [http://localhost/testimonials]
+
+
+Processing TestimonialsController#show (for 127.0.0.1 at 2010-06-19 14:00:36) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mTestimonial Load (0.2ms)[0m   [0;1mSELECT * FROM "testimonials" WHERE ("testimonials"."id" = 5) [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/show
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/testimonials/5]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:00:36) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 14:25:20) [GET]
+  [4;35;1mTestimonial Load (0.5ms)[0m   [0mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:25:20) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#new (for 127.0.0.1 at 2010-06-19 14:25:23) [GET]
+Rendering template within layouts/testimonials
+Rendering testimonials/new
+Rendered testimonials/_form (4.0ms)
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/testimonials/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:25:23) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#create (for 127.0.0.1 at 2010-06-19 14:25:57) [POST]
+  Parameters: {"category"=>"weddings", "commit"=>"Save changes", "authenticity_token"=>"dvhIi3tzJR7xbiHtLY55Qmfe8QriJLxrZfPfGCoqIT4=", "testimonial"=>{"viz"=>"1", "quote"=>"I hardly know where to start to express what a fabulous time we had on our wedding day. We couldn't believe our luck!\r\n\r\nThe process leading up to our wedding day went so smoothly. Elizabeth spent loads of time helping us write our vows, lending us a comprehensive manual of ideas and suggestions. She immediately understood what we wanted for our day and made the whole process so easy.\r\n\r\nOn our wedding day she looked fantastic, her genuine pleasure in marrying us was unmistakable, she put everyone involved at ease and she conducted the service with passion and professionalism, we could not have asked for more.\r\n\r\nLoads of our guests have commented on what a lovely warm hearted service she presented.\r\n\r\nThankyou Elizabeth you were wonderful. ", "who"=>"Louise and Chris"}}
+  [4;36;1mTestimonial Create (0.3ms)[0m   [0;1mINSERT INTO "testimonials" ("category", "created_at", "updated_at", "viz", "who", "quote") VALUES(NULL, '2010-06-19 04:25:57', '2010-06-19 04:25:57', 't', 'Louise and Chris', 'I hardly know where to start to express what a fabulous time we had on our wedding day. We couldn''t believe our luck!
+
+The process leading up to our wedding day went so smoothly. Elizabeth spent loads of time helping us write our vows, lending us a comprehensive manual of ideas and suggestions. She immediately understood what we wanted for our day and made the whole process so easy.
+
+On our wedding day she looked fantastic, her genuine pleasure in marrying us was unmistakable, she put everyone involved at ease and she conducted the service with passion and professionalism, we could not have asked for more.
+
+Loads of our guests have commented on what a lovely warm hearted service she presented.
+
+Thankyou Elizabeth you were wonderful. ')[0m
+Redirected to http://localhost:3000/testimonials/6
+Completed in 10ms (DB: 0) | 302 Found [http://localhost/testimonials]
+
+
+Processing TestimonialsController#show (for 127.0.0.1 at 2010-06-19 14:25:57) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mTestimonial Load (0.2ms)[0m   [0mSELECT * FROM "testimonials" WHERE ("testimonials"."id" = 6) [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/show
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/testimonials/6]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:25:57) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 14:26:02) [GET]
+  [4;36;1mTestimonial Load (0.5ms)[0m   [0;1mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 11ms (View: 8, DB: 1) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:26:02) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 14:41:58) [GET]
+  [4;35;1mTestimonial Load (0.5ms)[0m   [0mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+
+ActionView::TemplateError (undefined local variable or method `testimonial' for #<ActionView::Base:0x101ffcfd8>) on line #3 of app/views/testimonials/index.html.erb:
+1: <% title "Testimonials" %>
+2: 
+3: <% testimonial.each do |t|%>
+4:   <h4><%=h t.who %></h4>
+5:   <p><%= simple_format(t.quote) %></p>
+6: 
+
+    app/views/testimonials/index.html.erb:3
+
+Rendered rescues/_trace (84.0ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 14:42:10) [GET]
+  [4;36;1mTestimonial Load (0.5ms)[0m   [0;1mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #3 of app/views/testimonials/index.html.erb:
+1: <% title "Testimonials" %>
+2: 
+3: <% @testimonial.each do |t|%>
+4:   <h4><%=h t.who %></h4>
+5:   <p><%= simple_format(t.quote) %></p>
+6: 
+
+    app/views/testimonials/index.html.erb:3
+
+Rendered rescues/_trace (38.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 14:42:19) [GET]
+  [4;35;1mTestimonial Load (0.6ms)[0m   [0mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 15ms (View: 11, DB: 1) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:42:19) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 14:43:57) [GET]
+  [4;36;1mTestimonial Load (0.6ms)[0m   [0;1mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 18ms (View: 14, DB: 1) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:43:57) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 14:44:34) [GET]
+  [4;35;1mTestimonial Load (0.5ms)[0m   [0mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 64ms (View: 60, DB: 1) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:44:34) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 14:45:03) [GET]
+  [4;36;1mTestimonial Load (0.6ms)[0m   [0;1mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+ERROR: compiling _run_erb_app47views47testimonials47index46html46erb RAISED compile error
+/Users/adw/rails/lizzie02/app/views/testimonials/index.html.erb:5: syntax error, unexpected '=', expecting ')'
+...er.concat(( f.check_box :viz =).to_s); end; @output_buffer.c...
+                              ^
+/Users/adw/rails/lizzie02/app/views/testimonials/index.html.erb:31: syntax error, unexpected kENSURE, expecting kEND
+/Users/adw/rails/lizzie02/app/views/testimonials/index.html.erb:33: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_erb_app47views47testimonials47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ;  title "Testimonials" ; @output_buffer.concat "\n\n"
+
+;  @testimonials.each do |t|; @output_buffer.concat "\n  <h4>"
+; @output_buffer.concat((h t.who ).to_s); @output_buffer.concat " </h4>\n  <p>Display: "
+;  form_for(t) do |f| ; @output_buffer.concat(( f.check_box :viz =).to_s); end; @output_buffer.concat "</p>\n  <p>"
+; @output_buffer.concat(( simple_format(t.quote) ).to_s); @output_buffer.concat "</p>\n\n"
+
+;  end ; @output_buffer.concat "\n<table>\n  <tr>\n    <th>Who</th>\n    <th>Quote</th>\n    <th>Viz</th>\n    <th>Category</th>\n  </tr>\n  "
+
+
+
+
+
+
+
+;  for testimonial in @testimonials ; @output_buffer.concat "\n    <tr>\n      <td>"
+
+; @output_buffer.concat((h testimonial.who ).to_s); @output_buffer.concat "</td>\n      <td>"
+; @output_buffer.concat((h testimonial.quote ).to_s); @output_buffer.concat "</td>\n      <td>"
+; @output_buffer.concat((h testimonial.viz ).to_s); @output_buffer.concat "</td>\n      <td>"
+; @output_buffer.concat((h testimonial.category ).to_s); @output_buffer.concat "</td>\n      <td>"
+; @output_buffer.concat(( link_to "Show", testimonial ).to_s); @output_buffer.concat "</td>\n      <td>"
+; @output_buffer.concat(( link_to "Edit", edit_testimonial_path(testimonial) ).to_s); @output_buffer.concat "</td>\n      <td>"
+; @output_buffer.concat(( link_to "Destroy", testimonial, :confirm => 'Are you sure?', :method => :delete ).to_s); @output_buffer.concat "</td>\n    </tr>\n  "
+
+;  end ; @output_buffer.concat "\n</table>\n\n<p>"
+
+
+; @output_buffer.concat(( link_to "New Testimonial", new_testimonial_path ).to_s); @output_buffer.concat "</p>\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/adw/rails/lizzie02/app/views/testimonials/index.html.erb:33:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/adw/rails/lizzie02/app/views/testimonials/index.html.erb:5: syntax error, unexpected '=', expecting ')'
+...er.concat(( f.check_box :viz =).to_s); end; @output_buffer.c...
+                              ^
+/Users/adw/rails/lizzie02/app/views/testimonials/index.html.erb:31: syntax error, unexpected kENSURE, expecting kEND
+/Users/adw/rails/lizzie02/app/views/testimonials/index.html.erb:33: syntax error, unexpected $end, expecting kEND) on line #5 of app/views/testimonials/index.html.erb:
+2: 
+3: <% @testimonials.each do |t|%>
+4:   <h4><%=h t.who %> </h4>
+5:   <p>Display: <% form_for(t) do |f| %><%= f.check_box :viz =%><%end%></p>
+6:   <p><%= simple_format(t.quote) %></p>
+7: 
+8: <% end %>
+
+    app/views/testimonials/index.html.erb:33:in `compile!'
+
+Rendered rescues/_trace (36.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 14:45:18) [GET]
+  [4;35;1mTestimonial Load (0.6ms)[0m   [0mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 18ms (View: 14, DB: 1) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:45:18) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 14:46:25) [GET]
+  [4;36;1mTestimonial Load (0.5ms)[0m   [0;1mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+
+ActionView::TemplateError (undefined local variable or method `testimonial' for #<ActionView::Base:0x101fd07d0>) on line #7 of app/views/testimonials/index.html.erb:
+4:   <h4><%=h t.who %> </h4>
+5:   <p>Display: <% form_for(t) do |f| %><%= f.check_box :viz %><%end%></p>
+6:   <p><%= simple_format(t.quote) %></p>
+7:   <%= link_to "Show", testimonial %>
+8:   <%= link_to "Edit", edit_testimonial_path(testimonial) %>
+9:   <%= link_to "Destroy", testimonial, :confirm => 'Are you sure?', :method => :delete %>
+10: 
+
+    app/views/testimonials/index.html.erb:7
+    app/views/testimonials/index.html.erb:3:in `each'
+    app/views/testimonials/index.html.erb:3
+
+Rendered rescues/_trace (84.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 14:46:39) [GET]
+  [4;35;1mTestimonial Load (0.6ms)[0m   [0mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+
+ActionView::TemplateError (undefined local variable or method `testimonial' for #<ActionView::Base:0x1021999e0>) on line #7 of app/views/testimonials/index.html.erb:
+4:   <h4><%=h t.who %> </h4>
+5:   <p>Display: <% form_for(t) do |f| %><%= f.check_box :viz %><%end%></p>
+6:   <p><%= simple_format(t.quote) %></p>
+7:   <%= link_to "Show", testimonial %>
+8:   <%= link_to "Edit", edit_testimonial_path(testimonial) %>
+9:   <%= link_to "Destroy", t, :confirm => 'Are you sure?', :method => :delete %>
+10: 
+
+    app/views/testimonials/index.html.erb:7
+    app/views/testimonials/index.html.erb:3:in `each'
+    app/views/testimonials/index.html.erb:3
+
+Rendered rescues/_trace (87.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 14:46:57) [GET]
+  [4;36;1mTestimonial Load (0.6ms)[0m   [0;1mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+
+ActionView::TemplateError (undefined local variable or method `testimonial' for #<ActionView::Base:0x1023c4940>) on line #8 of app/views/testimonials/index.html.erb:
+5:   <p>Display: <% form_for(t) do |f| %><%= f.check_box :viz %><%end%></p>
+6:   <p><%= simple_format(t.quote) %></p>
+7:   <%= link_to "Show", t %>
+8:   <%= link_to "Edit", edit_testimonial_path(testimonial) %>
+9:   <%= link_to "Destroy", t, :confirm => 'Are you sure?', :method => :delete %>
+10: 
+11: <% end %>
+
+    app/views/testimonials/index.html.erb:8
+    app/views/testimonials/index.html.erb:3:in `each'
+    app/views/testimonials/index.html.erb:3
+
+Rendered rescues/_trace (37.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 14:47:13) [GET]
+  [4;35;1mTestimonial Load (0.6ms)[0m   [0mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 67ms (View: 15, DB: 1) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:47:13) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 14:47:45) [GET]
+  [4;36;1mTestimonial Load (0.6ms)[0m   [0;1mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 18ms (View: 15, DB: 1) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:47:45) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#destroy (for 127.0.0.1 at 2010-06-19 14:50:01) [DELETE]
+  Parameters: {"authenticity_token"=>"dvhIi3tzJR7xbiHtLY55Qmfe8QriJLxrZfPfGCoqIT4=", "id"=>"5"}
+  [4;35;1mTestimonial Load (0.2ms)[0m   [0mSELECT * FROM "testimonials" WHERE ("testimonials"."id" = 5) [0m
+  [4;36;1mTestimonial Destroy (0.2ms)[0m   [0;1mDELETE FROM "testimonials" WHERE "id" = 5[0m
+Redirected to http://localhost:3000/testimonials
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/testimonials/5]
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 14:50:01) [GET]
+  [4;35;1mTestimonial Load (0.6ms)[0m   [0mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:50:01) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#new (for 127.0.0.1 at 2010-06-19 14:51:38) [GET]
+Rendering template within layouts/testimonials
+Rendering testimonials/new
+Rendered testimonials/_form (3.8ms)
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/testimonials/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:51:38) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#create (for 127.0.0.1 at 2010-06-19 14:52:05) [POST]
+  Parameters: {"category"=>"weddings", "commit"=>"Save changes", "authenticity_token"=>"dvhIi3tzJR7xbiHtLY55Qmfe8QriJLxrZfPfGCoqIT4=", "testimonial"=>{"viz"=>"0", "quote"=>"Angus and I feel that we made the best choice in wedding celebrant, you put us at ease from the first meeting and we felt absolute confidence that you understood what we wanted and would help to make the day as special as it was. It was good to know that it was an element of the day we did not need to worry about. Your systems for paperwork and your recommendations for vows made the process surprisingly easy.\r\n\r\nThank you for making our day such a wonderful and memorable one. Your approach, warmth and genuine interest in us, as Angus and I celebrated our feelings for one another, made us feel that we had a friend marrying us and not a stranger. ", "who"=>"Lisa and Angus"}}
+  [4;36;1mTestimonial Create (0.3ms)[0m   [0;1mINSERT INTO "testimonials" ("category", "created_at", "updated_at", "viz", "who", "quote") VALUES(NULL, '2010-06-19 04:52:05', '2010-06-19 04:52:05', 'f', 'Lisa and Angus', 'Angus and I feel that we made the best choice in wedding celebrant, you put us at ease from the first meeting and we felt absolute confidence that you understood what we wanted and would help to make the day as special as it was. It was good to know that it was an element of the day we did not need to worry about. Your systems for paperwork and your recommendations for vows made the process surprisingly easy.
+
+Thank you for making our day such a wonderful and memorable one. Your approach, warmth and genuine interest in us, as Angus and I celebrated our feelings for one another, made us feel that we had a friend marrying us and not a stranger. ')[0m
+Redirected to http://localhost:3000/testimonials/7
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/testimonials]
+
+
+Processing TestimonialsController#show (for 127.0.0.1 at 2010-06-19 14:52:05) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mTestimonial Load (0.3ms)[0m   [0mSELECT * FROM "testimonials" WHERE ("testimonials"."id" = 7) [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/show
+Completed in 54ms (View: 5, DB: 0) | 200 OK [http://localhost/testimonials/7]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:52:05) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 14:52:10) [GET]
+  [4;36;1mTestimonial Load (0.6ms)[0m   [0;1mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 15ms (View: 11, DB: 1) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:52:10) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#new (for 127.0.0.1 at 2010-06-19 14:52:14) [GET]
+Rendering template within layouts/testimonials
+Rendering testimonials/new
+Rendered testimonials/_form (4.1ms)
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/testimonials/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:52:14) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#create (for 127.0.0.1 at 2010-06-19 14:52:32) [POST]
+  Parameters: {"category"=>"weddings", "commit"=>"Save changes", "authenticity_token"=>"dvhIi3tzJR7xbiHtLY55Qmfe8QriJLxrZfPfGCoqIT4=", "testimonial"=>{"viz"=>"0", "quote"=>"Elizabeth set the mood for a romantic and fun ceremony, the way she talked and moved around put everyone at ease. She made the ceremony so relaxed, personal and easy... All the guest commented on how beautiful and elegant she is and on how she performed the ceremony with ease, they loved how they were able to laugh during the ceremony without the feeling of everything being so serious. Lastly Elizabeth made our day so special and she really did go above and beyond. As a result of the ceremony she set the tone for the rest of the night as a fun and relaxed night. Thank you Elizabeth for the most unforgettable and spectacular ceremony, we were honoured to have been married by such a beautiful and caring women and we will never forget it!!! ", "who"=>"Sharon and Scott"}}
+  [4;35;1mTestimonial Create (0.3ms)[0m   [0mINSERT INTO "testimonials" ("category", "created_at", "updated_at", "viz", "who", "quote") VALUES(NULL, '2010-06-19 04:52:32', '2010-06-19 04:52:32', 'f', 'Sharon and Scott', 'Elizabeth set the mood for a romantic and fun ceremony, the way she talked and moved around put everyone at ease. She made the ceremony so relaxed, personal and easy... All the guest commented on how beautiful and elegant she is and on how she performed the ceremony with ease, they loved how they were able to laugh during the ceremony without the feeling of everything being so serious. Lastly Elizabeth made our day so special and she really did go above and beyond. As a result of the ceremony she set the tone for the rest of the night as a fun and relaxed night. Thank you Elizabeth for the most unforgettable and spectacular ceremony, we were honoured to have been married by such a beautiful and caring women and we will never forget it!!! ')[0m
+Redirected to http://localhost:3000/testimonials/8
+Completed in 10ms (DB: 0) | 302 Found [http://localhost/testimonials]
+
+
+Processing TestimonialsController#show (for 127.0.0.1 at 2010-06-19 14:52:33) [GET]
+  Parameters: {"id"=>"8"}
+  [4;36;1mTestimonial Load (0.2ms)[0m   [0;1mSELECT * FROM "testimonials" WHERE ("testimonials"."id" = 8) [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/testimonials/8]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:52:33) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 14:52:34) [GET]
+  [4;35;1mTestimonial Load (0.7ms)[0m   [0mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 19ms (View: 15, DB: 1) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:52:34) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#new (for 127.0.0.1 at 2010-06-19 14:53:44) [GET]
+Rendering template within layouts/testimonials
+Rendering testimonials/new
+Rendered testimonials/_form (4.1ms)
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/testimonials/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:53:44) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#create (for 127.0.0.1 at 2010-06-19 14:54:00) [POST]
+  Parameters: {"category"=>"weddings", "commit"=>"Save changes", "authenticity_token"=>"dvhIi3tzJR7xbiHtLY55Qmfe8QriJLxrZfPfGCoqIT4=", "testimonial"=>{"viz"=>"1", "quote"=>"Liz was celebrant at my sister's wedding in 2006, my mum's wedding in 2007 and recently at my own wedding. This meant that the service held an extra special meaning to me and my family. Liz's delivery is warm and engaging as she takes time to learn about who you are as a couple and then apply this to your wedding service - the history of how you met, funny anecdotes, the proposal, the role of your family and friends in your lives, and more. Liz will go to great lengths to tailor the service to your personal preferences in terms of traditional and non traditional vows, location of service, music and readings, guest participation etc. My Dad even attended via Skype from his home in the UK and Liz ensured he felt involved the whole way through. I really can't fault Liz and I'd definitely recommend her to any bride or groom looking for a very special civil wedding service with a personal touch. ", "who"=>"Tamsin and Darren"}}
+  [4;36;1mTestimonial Create (0.4ms)[0m   [0;1mINSERT INTO "testimonials" ("category", "created_at", "updated_at", "viz", "who", "quote") VALUES(NULL, '2010-06-19 04:54:00', '2010-06-19 04:54:00', 't', 'Tamsin and Darren', 'Liz was celebrant at my sister''s wedding in 2006, my mum''s wedding in 2007 and recently at my own wedding. This meant that the service held an extra special meaning to me and my family. Liz''s delivery is warm and engaging as she takes time to learn about who you are as a couple and then apply this to your wedding service - the history of how you met, funny anecdotes, the proposal, the role of your family and friends in your lives, and more. Liz will go to great lengths to tailor the service to your personal preferences in terms of traditional and non traditional vows, location of service, music and readings, guest participation etc. My Dad even attended via Skype from his home in the UK and Liz ensured he felt involved the whole way through. I really can''t fault Liz and I''d definitely recommend her to any bride or groom looking for a very special civil wedding service with a personal touch. ')[0m
+Redirected to http://localhost:3000/testimonials
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/testimonials]
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 14:54:00) [GET]
+  [4;35;1mTestimonial Load (0.7ms)[0m   [0mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 24ms (View: 20, DB: 1) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:54:00) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#new (for 127.0.0.1 at 2010-06-19 14:54:32) [GET]
+Rendering template within layouts/testimonials
+Rendering testimonials/new
+Rendered testimonials/_form (3.9ms)
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/testimonials/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:54:33) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TestimonialsController#create (for 127.0.0.1 at 2010-06-19 14:54:45) [POST]
+  Parameters: {"category"=>"weddings", "commit"=>"Save changes", "authenticity_token"=>"dvhIi3tzJR7xbiHtLY55Qmfe8QriJLxrZfPfGCoqIT4=", "testimonial"=>{"viz"=>"1", "quote"=>"Elizabeth made us feel extremely comfortable and was very professional throughout our engagement. We felt confident that all would go perfectly, which it did, mostly thanks to Elizabeth. She provided us with many great ideas and thoughts to enhance for our special day and displayed the maturity, experience and guidance we needed to make the whole day a great success. I would not hesitate in recommending Elizabeth to any couple looking to take the plunge. ", "who"=>"Peter and Kat"}}
+  [4;36;1mTestimonial Create (0.6ms)[0m   [0;1mINSERT INTO "testimonials" ("category", "created_at", "updated_at", "viz", "who", "quote") VALUES(NULL, '2010-06-19 04:54:45', '2010-06-19 04:54:45', 't', 'Peter and Kat', 'Elizabeth made us feel extremely comfortable and was very professional throughout our engagement. We felt confident that all would go perfectly, which it did, mostly thanks to Elizabeth. She provided us with many great ideas and thoughts to enhance for our special day and displayed the maturity, experience and guidance we needed to make the whole day a great success. I would not hesitate in recommending Elizabeth to any couple looking to take the plunge. ')[0m
+Redirected to http://localhost:3000/testimonials
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/testimonials]
+
+
+Processing TestimonialsController#index (for 127.0.0.1 at 2010-06-19 14:54:45) [GET]
+  [4;35;1mTestimonial Load (0.8ms)[0m   [0mSELECT * FROM "testimonials" [0m
+Rendering template within layouts/testimonials
+Rendering testimonials/index
+Completed in 27ms (View: 23, DB: 1) | 200 OK [http://localhost/testimonials]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 14:54:45) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
