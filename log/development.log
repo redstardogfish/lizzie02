@@ -1662,3 +1662,1238 @@ Rendering template within layouts/pics
 Rendering pics/index
 Rendered pics/_form (1.6ms)
 Completed in 36ms (View: 30, DB: 1) | 200 OK [http://localhost/pics]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePhotos (20100617032940)
+Migrating to CreatePics (20100618022400)
+Migrating to AddAttachmentsPhotoToPic (20100618022716)
+Migrating to CreatePages (20100618090055)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE TABLE "pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "permalink" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100618090055')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("photos")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("pics")[0m
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-06-18 19:16:58) [GET]
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://localhost/pages]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-06-18 19:17:08) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (3.9ms)
+Completed in 16ms (View: 12, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#create (for 127.0.0.1 at 2010-06-18 19:18:05) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"dvhIi3tzJR7xbiHtLY55Qmfe8QriJLxrZfPfGCoqIT4=", "page"=>{"permalink"=>"funerals", "name"=>"Funerals", "content"=>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n\r\n\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n\r\n\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}}
+  [4;35;1mPage Create (0.3ms)[0m   [0mINSERT INTO "pages" ("name", "permalink", "created_at", "updated_at", "content") VALUES('Funerals', 'funerals', '2010-06-18 09:18:05', '2010-06-18 09:18:05', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')[0m
+Redirected to http://localhost:3000/pages/1
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/pages]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 19:18:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:57:23) [GET]
+
+ActionController::RoutingError (No route matches "/main/weddings" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:57:31) [GET]
+
+ActionController::RoutingError (No route matches "/main/wedding" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:57:44) [GET]
+
+ActionController::RoutingError (No route matches "/mains/weddings" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:58:09) [GET]
+
+ActionController::RoutingError (No route matches "/main/weddings" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:58:15) [GET]
+
+ActionController::RoutingError (No route matches "/main/other" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#other (for 127.0.0.1 at 2010-06-18 20:01:27) [GET]
+Rendering template within layouts/application
+Rendering main/other
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/main/other]
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-18 20:01:39) [GET]
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/main/weddings]
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-18 20:33:52) [GET]
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/weddings]
+
+
+Processing MainController#funerals (for 127.0.0.1 at 2010-06-18 20:35:16) [GET]
+Rendering template within layouts/application
+Rendering main/funerals
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/funerals]
+
+
+Processing MainController#namings (for 127.0.0.1 at 2010-06-18 20:35:22) [GET]
+Rendering template within layouts/application
+Rendering main/namings
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/namings]
+
+
+Processing MainController#other (for 127.0.0.1 at 2010-06-18 20:35:28) [GET]
+Rendering template within layouts/application
+Rendering main/other
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/other]
+
+
+Processing MainController#contact (for 127.0.0.1 at 2010-06-18 20:35:33) [GET]
+Rendering template within layouts/application
+Rendering main/contact
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/contact]
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-18 20:39:19) [GET]
+
+NameError (undefined local variable or method `pics' for #<MainController:0x10186b6e8>):
+  app/controllers/main_controller.rb:3:in `weddings'
+
+Rendered rescues/_trace (75.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-18 20:39:32) [GET]
+
+NameError (uninitialized constant MainController::Pics):
+  app/controllers/main_controller.rb:3:in `weddings'
+
+Rendered rescues/_trace (29.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-18 20:39:55) [GET]
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `photos' for #<Class:0x1016db5f8>):
+  app/controllers/main_controller.rb:3:in `weddings'
+
+Rendered rescues/_trace (89.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-18 20:40:18) [GET]
+  [4;36;1mPic Load (0.8ms)[0m   [0;1mSELECT * FROM "pics" [0m
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 6ms (View: 1, DB: 1) | 200 OK [http://localhost/weddings]
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-18 20:41:42) [GET]
+  [4;35;1mPic Load (1.0ms)[0m   [0mSELECT * FROM "pics" [0m
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://localhost/weddings]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:41:42) [GET]
+
+ActionController::RoutingError (No route matches "/images/pic5_big.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:41:42) [GET]
+
+ActionController::RoutingError (No route matches "/images/pic1_big.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:41:42) [GET]
+
+ActionController::RoutingError (No route matches "/images/pic2_big.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:41:42) [GET]
+
+ActionController::RoutingError (No route matches "/images/pic3_big.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:41:42) [GET]
+
+ActionController::RoutingError (No route matches "/images/pic4_big.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:41:42) [GET]
+
+ActionController::RoutingError (No route matches "/images/pic6_big.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-18 23:52:31) [GET]
+  [4;36;1mPic Load (0.9ms)[0m   [0;1mSELECT * FROM "pics" [0m
+Rendering template within layouts/application
+Rendering main/weddings
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #4 of app/views/main/weddings.html.erb:
+1: 
+2: <div id = "mainpic">
+3: 	<div class="slideshow">
+4: 		<% @pic.each do |pic|%>
+5: 		  <%= image_tag(pic.photo.url(:display))%>
+6: 		<% end %>
+7: 	</div>
+
+    app/views/main/weddings.html.erb:4
+
+Rendered rescues/_trace (36.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-18 23:53:00) [GET]
+  [4;35;1mPic Load (0.9ms)[0m   [0mSELECT * FROM "pics" [0m
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 76ms (View: 71, DB: 1) | 200 OK [http://localhost/weddings]
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-18 23:57:37) [GET]
+  [4;36;1mPic Load (0.8ms)[0m   [0;1mSELECT * FROM "pics" [0m
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/weddings]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 23:57:37) [GET]
+
+ActionController::RoutingError (No route matches "/images/et_back_trans.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-18 23:59:39) [GET]
+  [4;35;1mPic Load (0.9ms)[0m   [0mSELECT * FROM "pics" [0m
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 17ms (View: 12, DB: 1) | 200 OK [http://localhost/weddings]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 23:59:39) [GET]
+
+ActionController::RoutingError (No route matches "/images/et_back_trans.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-19 00:04:28) [GET]
+  [4;36;1mPic Load (0.9ms)[0m   [0;1mSELECT * FROM "pics" [0m
+Rendering template within layouts/application
+Rendering main/weddings
+
+ActionView::TemplateError (can't convert nil into String) on line #30 of app/views/layouts/application.html.erb:
+27: 	<div id="top">
+28: 		<div id="logospace">
+29: 			<%= link_to image_tag("et_signature_trans.png", :id => "signature"), :controller => "main", :action => "index"  %><br>
+30: 			<%= link_to image_tag(@pic, :id => "civcel"), :controller => "main", :action => "index"  %> <%= @page_title %>
+31: 		</div><% if @quote%>
+32: 		<div id="quote">
+33: 			“<%= @quote%>”
+
+    app/views/layouts/application.html.erb:30
+
+Rendered rescues/_trace (38.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-19 00:05:06) [GET]
+  [4;35;1mPic Load (0.9ms)[0m   [0mSELECT * FROM "pics" [0m
+Rendering template within layouts/application
+Rendering main/weddings
+
+ActionView::TemplateError (can't convert nil into String) on line #30 of app/views/layouts/application.html.erb:
+27: 	<div id="top">
+28: 		<div id="logospace">
+29: 			<%= link_to image_tag("et_signature_trans.png", :id => "signature"), :controller => "main", :action => "index"  %><br>
+30: 			<%= link_to image_tag(@pic, :id => "civcel"), :controller => "main", :action => "index"  %> <%= @page_title %>
+31: 		</div><% if @quote%>
+32: 		<div id="quote">
+33: 			“<%= @quote%>”
+
+    app/views/layouts/application.html.erb:30
+
+Rendered rescues/_trace (38.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-19 00:11:53) [GET]
+  [4;36;1mPic Load (0.8ms)[0m   [0;1mSELECT * FROM "pics" [0m
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://localhost/weddings]
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-19 00:12:46) [GET]
+  [4;35;1mPic Load (0.8ms)[0m   [0mSELECT * FROM "pics" [0m
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 76ms (View: 72, DB: 1) | 200 OK [http://localhost/weddings]
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-19 00:12:49) [GET]
+  [4;36;1mPic Load (0.9ms)[0m   [0;1mSELECT * FROM "pics" [0m
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/weddings]
+
+
+Processing MainController#namings (for 127.0.0.1 at 2010-06-19 00:12:50) [GET]
+Rendering template within layouts/application
+Rendering main/namings
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/namings]
+
+
+Processing MainController#funerals (for 127.0.0.1 at 2010-06-19 00:12:52) [GET]
+Rendering template within layouts/application
+Rendering main/funerals
+
+ActionView::TemplateError (can't convert nil into String) on line #30 of app/views/layouts/application.html.erb:
+27: 	<div id="top">
+28: 		<div id="logospace">
+29: 			<%= link_to image_tag("et_signature_trans.png", :id => "signature"), :controller => "main", :action => "index"  %><br>
+30: 			<%= link_to image_tag(@nav_icon, :id => "civcel"), :controller => "main", :action => "index"  %> <%= @page_title %>
+31: 		</div><% if @quote%>
+32: 		<div id="quote">
+33: 			“<%= @quote%>”
+
+    app/views/layouts/application.html.erb:30
+
+Rendered rescues/_trace (100.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#namings (for 127.0.0.1 at 2010-06-19 00:12:55) [GET]
+Rendering template within layouts/application
+Rendering main/namings
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/namings]
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-19 00:12:59) [GET]
+  [4;35;1mPic Load (0.9ms)[0m   [0mSELECT * FROM "pics" [0m
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/weddings]
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-19 00:17:17) [GET]
+  [4;36;1mPic Load (0.2ms)[0m   [0;1mSELECT * FROM "pics" WHERE ("pics"."display" IS NULL) [0m
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/weddings]
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-19 00:18:32) [GET]
+  [4;35;1mPic Load (0.1ms)[0m   [0mSELECT * FROM "pics" WHERE ("pics"."display" = 'true') [0m
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 14ms (View: 4, DB: 0) | 200 OK [http://localhost/weddings]
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-19 00:19:43) [GET]
+  [4;36;1mPic Load (0.4ms)[0m   [0;1mSELECT * FROM "pics" WHERE ("pics"."display" = 'true') [0m
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/weddings]
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-19 00:20:36) [GET]
+  [4;35;1mPic Load (0.9ms)[0m   [0mSELECT * FROM "pics" [0m
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/weddings]
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-19 00:21:38) [GET]
+  [4;36;1mPic Load (0.8ms)[0m   [0;1mSELECT * FROM "pics" [0m
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/weddings]
+
+
+Processing PicsController#index (for 127.0.0.1 at 2010-06-19 00:21:53) [GET]
+  [4;35;1mPic Load (0.9ms)[0m   [0mSELECT * FROM "pics" [0m
+Rendering template within layouts/pics
+Rendering pics/index
+Rendered pics/_form (1.6ms)
+Completed in 35ms (View: 29, DB: 1) | 200 OK [http://localhost/pics]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 00:21:53) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PicsController#edit (for 127.0.0.1 at 2010-06-19 00:21:58) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mPic Load (0.2ms)[0m   [0;1mSELECT * FROM "pics" WHERE ("pics"."id" = 6) [0m
+Rendering template within layouts/pics
+Rendering pics/edit
+Rendered pics/_form (3.8ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/pics/6/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 00:21:58) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-19 00:22:03) [GET]
+  [4;35;1mPic Load (0.9ms)[0m   [0mSELECT * FROM "pics" [0m
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/weddings]
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-19 09:42:28) [GET]
+  [4;36;1mPic Load (0.9ms)[0m   [0;1mSELECT * FROM "pics" [0m
+Rendering template within layouts/application
+Rendering main/weddings
+ERROR: compiling _run_erb_app47views47main47weddings46html46erb RAISED compile error
+/Users/adw/rails/lizzie02/app/views/main/weddings.html.erb:6: syntax error, unexpected kEND, expecting ')'
+;  end ; @output_buffer.concat "\n\t...
+      ^
+/Users/adw/rails/lizzie02/app/views/main/weddings.html.erb:33: syntax error, unexpected kENSURE, expecting ')'
+/Users/adw/rails/lizzie02/app/views/main/weddings.html.erb:35: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47main47weddings46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\n<div id = \"mainpic\">\n\t"
+
+;  @photos.each do |pic|; @output_buffer.concat "\n\t    "
+; @output_buffer.concat(( pic.photo.url).to_s); @output_buffer.concat "\n\t\t"
+; @output_buffer.concat(( #image_tag(pic.photo.url(:display)) if pic.display).to_s); @output_buffer.concat "\n\t"
+;  end ; @output_buffer.concat "\n\t<div class=\"slideshow\">\n\n\t</div>\n\t\n</div>\n\n<div id = \"intro\">\n\t<p>Whether formal or casual, Elizabeth can provide you with special highly personalised vows in ceremonies ranging from the deeply traditional\n\t\tto the unique. \n\t\tHer wish is to give you the kind of ceremony that is both original and personal...\n\t</p>\n\n\t\n\t<p class = \"first\">The ceremony of your dreams...\n\t</p>\n\t<p>Are you coming from overseas to be married in Australia?\t</p>\n\t<p>Elizabeth has extensive experience in this area and will assist you in the easy organisation of your overseas wedding. It's easier than you think!\n\t</p>\n\n\n</div>\n\n\n\n\n"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/adw/rails/lizzie02/app/views/main/weddings.html.erb:35:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/adw/rails/lizzie02/app/views/main/weddings.html.erb:6: syntax error, unexpected kEND, expecting ')'
+;  end ; @output_buffer.concat "\n\t...
+      ^
+/Users/adw/rails/lizzie02/app/views/main/weddings.html.erb:33: syntax error, unexpected kENSURE, expecting ')'
+/Users/adw/rails/lizzie02/app/views/main/weddings.html.erb:35: syntax error, unexpected kEND, expecting ')') on line #6 of app/views/main/weddings.html.erb:
+3: 	<% @photos.each do |pic|%>
+4: 	    <%= pic.photo.url%>
+5: 		<%= #image_tag(pic.photo.url(:display)) if pic.display%>
+6: 	<% end %>
+7: 	<div class="slideshow">
+8: 
+9: 	</div>
+
+    app/views/main/weddings.html.erb:35:in `compile!'
+
+Rendered rescues/_trace (35.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-19 09:43:36) [GET]
+  [4;35;1mPic Load (0.8ms)[0m   [0mSELECT * FROM "pics" [0m
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/weddings]
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-19 09:43:47) [GET]
+  [4;36;1mPic Load (0.9ms)[0m   [0;1mSELECT * FROM "pics" [0m
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 18ms (View: 13, DB: 1) | 200 OK [http://localhost/weddings]
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-19 09:44:02) [GET]
+  [4;35;1mPic Load (0.9ms)[0m   [0mSELECT * FROM "pics" [0m
+Rendering template within layouts/application
+Rendering main/weddings
+ERROR: compiling _run_erb_app47views47main47weddings46html46erb RAISED compile error
+/Users/adw/rails/lizzie02/app/views/main/weddings.html.erb:5: syntax error, unexpected kEND, expecting ')'
+;  end ; @output_buffer.concat "\n\t...
+      ^
+/Users/adw/rails/lizzie02/app/views/main/weddings.html.erb:32: syntax error, unexpected kENSURE, expecting ')'
+/Users/adw/rails/lizzie02/app/views/main/weddings.html.erb:34: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47main47weddings46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\n<div id = \"mainpic\">\n\t"
+
+;  @photos.each do |pic|; @output_buffer.concat "\n\t  "
+; @output_buffer.concat(( #image_tag(pic.photo.url(:display)) ).to_s); @output_buffer.concat "\n\t"
+;  end ; @output_buffer.concat "\n\t<div class=\"slideshow\">\n\n\t</div>\n\t\n</div>\n\n<div id = \"intro\">\n\t<p>Whether formal or casual, Elizabeth can provide you with special highly personalised vows in ceremonies ranging from the deeply traditional\n\t\tto the unique. \n\t\tHer wish is to give you the kind of ceremony that is both original and personal...\n\t</p>\n\n\t\n\t<p class = \"first\">The ceremony of your dreams...\n\t</p>\n\t<p>Are you coming from overseas to be married in Australia?\t</p>\n\t<p>Elizabeth has extensive experience in this area and will assist you in the easy organisation of your overseas wedding. It's easier than you think!\n\t</p>\n\n\n</div>\n\n\n\n\n"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/adw/rails/lizzie02/app/views/main/weddings.html.erb:34:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/adw/rails/lizzie02/app/views/main/weddings.html.erb:5: syntax error, unexpected kEND, expecting ')'
+;  end ; @output_buffer.concat "\n\t...
+      ^
+/Users/adw/rails/lizzie02/app/views/main/weddings.html.erb:32: syntax error, unexpected kENSURE, expecting ')'
+/Users/adw/rails/lizzie02/app/views/main/weddings.html.erb:34: syntax error, unexpected kEND, expecting ')') on line #5 of app/views/main/weddings.html.erb:
+2: <div id = "mainpic">
+3: 	<% @photos.each do |pic|%>
+4: 	  <%= #image_tag(pic.photo.url(:display)) %>
+5: 	<% end %>
+6: 	<div class="slideshow">
+7: 
+8: 	</div>
+
+    app/views/main/weddings.html.erb:34:in `compile!'
+
+Rendered rescues/_trace (34.7ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-19 09:44:33) [GET]
+  [4;36;1mPic Load (0.9ms)[0m   [0;1mSELECT * FROM "pics" [0m
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 76ms (View: 71, DB: 1) | 200 OK [http://localhost/weddings]
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-19 09:44:51) [GET]
+  [4;35;1mPic Load (0.8ms)[0m   [0mSELECT * FROM "pics" [0m
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/weddings]
+  [4;36;1mPic Load (1.0ms)[0m   [0;1mSELECT * FROM "pics" [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePhotos (20100617032940)
+Migrating to CreatePics (20100618022400)
+Migrating to AddAttachmentsPhotoToPic (20100618022716)
+Migrating to CreatePages (20100618090055)
+Migrating to AddVizToPic (20100619003011)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "pics" ADD "viz" boolean[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100619003011')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("photos")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("pics")[0m
+
+
+Processing PicsController#index (for 127.0.0.1 at 2010-06-19 10:31:33) [GET]
+  [4;36;1mPic Load (0.9ms)[0m   [0;1mSELECT * FROM "pics" [0m
+Rendering template within layouts/pics
+Rendering pics/index
+Rendered pics/_form (2.2ms)
+Completed in 40ms (View: 34, DB: 1) | 200 OK [http://localhost/pics]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 10:31:33) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PicsController#edit (for 127.0.0.1 at 2010-06-19 10:31:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPic Load (0.2ms)[0m   [0mSELECT * FROM "pics" WHERE ("pics"."id" = 1) [0m
+Rendering template within layouts/pics
+Rendering pics/edit
+Rendered pics/_form (3.5ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/pics/1/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 10:31:39) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PicsController#update (for 127.0.0.1 at 2010-06-19 10:31:41) [PUT]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"dvhIi3tzJR7xbiHtLY55Qmfe8QriJLxrZfPfGCoqIT4=", "id"=>"1", "pic"=>{"viz"=>"1"}}
+  [4;36;1mPic Load (0.3ms)[0m   [0;1mSELECT * FROM "pics" WHERE ("pics"."id" = 1) [0m
+  [4;35;1mPic Update (0.3ms)[0m   [0mUPDATE "pics" SET "updated_at" = '2010-06-19 00:31:41', "viz" = 't' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/pics
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/pics/1]
+
+
+Processing PicsController#index (for 127.0.0.1 at 2010-06-19 10:31:41) [GET]
+  [4;36;1mPic Load (0.9ms)[0m   [0;1mSELECT * FROM "pics" [0m
+Rendering template within layouts/pics
+Rendering pics/index
+Rendered pics/_form (1.6ms)
+Completed in 37ms (View: 31, DB: 1) | 200 OK [http://localhost/pics]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 10:31:41) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PicsController#edit (for 127.0.0.1 at 2010-06-19 10:31:44) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPic Load (0.2ms)[0m   [0mSELECT * FROM "pics" WHERE ("pics"."id" = 3) [0m
+Rendering template within layouts/pics
+Rendering pics/edit
+Rendered pics/_form (63.2ms)
+Completed in 70ms (View: 65, DB: 0) | 200 OK [http://localhost/pics/3/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 10:31:44) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PicsController#update (for 127.0.0.1 at 2010-06-19 10:31:46) [PUT]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"dvhIi3tzJR7xbiHtLY55Qmfe8QriJLxrZfPfGCoqIT4=", "id"=>"3", "pic"=>{"viz"=>"1"}}
+  [4;36;1mPic Load (0.2ms)[0m   [0;1mSELECT * FROM "pics" WHERE ("pics"."id" = 3) [0m
+  [4;35;1mPic Update (0.3ms)[0m   [0mUPDATE "pics" SET "updated_at" = '2010-06-19 00:31:46', "viz" = 't' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/pics
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/pics/3]
+
+
+Processing PicsController#index (for 127.0.0.1 at 2010-06-19 10:31:46) [GET]
+  [4;36;1mPic Load (0.9ms)[0m   [0;1mSELECT * FROM "pics" [0m
+Rendering template within layouts/pics
+Rendering pics/index
+Rendered pics/_form (1.5ms)
+Completed in 38ms (View: 32, DB: 1) | 200 OK [http://localhost/pics]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 10:31:46) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PicsController#edit (for 127.0.0.1 at 2010-06-19 10:31:50) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mPic Load (0.2ms)[0m   [0mSELECT * FROM "pics" WHERE ("pics"."id" = 6) [0m
+Rendering template within layouts/pics
+Rendering pics/edit
+Rendered pics/_form (3.4ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/pics/6/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 10:31:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PicsController#update (for 127.0.0.1 at 2010-06-19 10:31:51) [PUT]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"dvhIi3tzJR7xbiHtLY55Qmfe8QriJLxrZfPfGCoqIT4=", "id"=>"6", "pic"=>{"viz"=>"1"}}
+  [4;36;1mPic Load (0.2ms)[0m   [0;1mSELECT * FROM "pics" WHERE ("pics"."id" = 6) [0m
+  [4;35;1mPic Update (0.3ms)[0m   [0mUPDATE "pics" SET "updated_at" = '2010-06-19 00:31:51', "viz" = 't' WHERE "id" = 6[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/pics
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/pics/6]
+
+
+Processing PicsController#index (for 127.0.0.1 at 2010-06-19 10:31:51) [GET]
+  [4;36;1mPic Load (0.9ms)[0m   [0;1mSELECT * FROM "pics" [0m
+Rendering template within layouts/pics
+Rendering pics/index
+Rendered pics/_form (1.6ms)
+Completed in 37ms (View: 31, DB: 1) | 200 OK [http://localhost/pics]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-19 10:31:51) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/et.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-19 10:36:04) [GET]
+  [4;35;1mPic Load (0.9ms)[0m   [0mSELECT * FROM "pics" [0m
+Rendering template within layouts/application
+Rendering main/weddings
+
+ActionView::TemplateError (undefined method `viz' for #<Paperclip::Attachment:0x104273328>) on line #4 of app/views/main/weddings.html.erb:
+1: 
+2: <div id = "mainpic">
+3: 	<% @photos.each do |pic|%>
+4: 	  <%= image_tag(pic.photo.url(:display)) if pic.photo.viz %>
+5: 	<% end %>
+6: 	<div class="slideshow">
+7: 
+
+    app/views/main/weddings.html.erb:4
+    app/views/main/weddings.html.erb:3:in `each'
+    app/views/main/weddings.html.erb:3
+
+Rendered rescues/_trace (97.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-19 10:36:19) [GET]
+  [4;36;1mPic Load (0.9ms)[0m   [0;1mSELECT * FROM "pics" [0m
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 17ms (View: 12, DB: 1) | 200 OK [http://localhost/weddings]
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-19 10:36:30) [GET]
+  [4;35;1mPic Load (0.9ms)[0m   [0mSELECT * FROM "pics" [0m
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/weddings]
+
+
+Processing ApplicationController#weddings (for 127.0.0.1 at 2010-06-19 11:42:59) [GET]
+
+SyntaxError (/Users/adw/rails/lizzie02/app/controllers/main_controller.rb:9: odd number list for Hash
+    @photos = Pic.find(:all, :conditions =>{:viz = 'true'})
+                                                  ^
+/Users/adw/rails/lizzie02/app/controllers/main_controller.rb:9: syntax error, unexpected '=', expecting '}'
+    @photos = Pic.find(:all, :conditions =>{:viz = 'true'})
+                                                  ^
+/Users/adw/rails/lizzie02/app/controllers/main_controller.rb:9: syntax error, unexpected '}', expecting kEND
+    @photos = Pic.find(:all, :conditions =>{:viz = 'true'})
+                                                          ^):
+  
+
+Rendered rescues/_trace (27.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#weddings (for 127.0.0.1 at 2010-06-19 11:43:15) [GET]
+
+SyntaxError (/Users/adw/rails/lizzie02/app/controllers/main_controller.rb:9: odd number list for Hash
+    @photos = Pic.find(:all, :conditions =>{:viz = true})
+                                                  ^
+/Users/adw/rails/lizzie02/app/controllers/main_controller.rb:9: syntax error, unexpected '=', expecting '}'
+    @photos = Pic.find(:all, :conditions =>{:viz = true})
+                                                  ^):
+  
+
+Rendered rescues/_trace (27.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#weddings (for 127.0.0.1 at 2010-06-19 11:43:56) [GET]
+
+SyntaxError (/Users/adw/rails/lizzie02/app/controllers/main_controller.rb:9: odd number list for Hash
+    @photos = Pic.find(:all, :conditions =>{:viz == true})
+                                                         ^):
+  
+
+Rendered rescues/_trace (88.4ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-19 11:44:24) [GET]
+  [4;36;1mPic Load (0.4ms)[0m   [0;1mSELECT * FROM "pics" WHERE ("pics"."viz" IS NULL) [0m
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://localhost/weddings]
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-19 11:56:03) [GET]
+  [4;35;1mPic Load (0.4ms)[0m   [0mSELECT * FROM "pics" WHERE ("pics"."viz" = 't') [0m
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/weddings]
+
+
+Processing MainController#funerals (for 127.0.0.1 at 2010-06-19 12:03:47) [GET]
+Rendering template within layouts/application
+Rendering main/funerals
+
+ActionView::TemplateError (can't convert nil into String) on line #30 of app/views/layouts/application.html.erb:
+27: 	<div id="top">
+28: 		<div id="logospace">
+29: 			<%= link_to image_tag("et_signature_trans.png", :id => "signature"), :controller => "main", :action => "index"  %><br>
+30: 			<%= link_to image_tag(@nav_icon, :id => "civcel"), :controller => "main", :action => "index"  %> <%= @page_title %>
+31: 		</div><% if @quote%>
+32: 		<div id="quote">
+33: 			“<%= @quote%>”
+
+    app/views/layouts/application.html.erb:30
+
+Rendered rescues/_trace (39.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#funerals (for 127.0.0.1 at 2010-06-19 12:12:31) [GET]
+Rendering template within layouts/application
+Rendering main/funerals
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/funerals]
+
+
+Processing MainController#funerals (for 127.0.0.1 at 2010-06-19 12:12:39) [GET]
+Rendering template within layouts/application
+Rendering main/funerals
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/funerals]
+
+
+Processing MainController#funerals (for 127.0.0.1 at 2010-06-19 12:12:53) [GET]
+Rendering template within layouts/application
+Rendering main/funerals
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/funerals]
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-19 12:13:56) [GET]
+  [4;36;1mPic Load (0.4ms)[0m   [0;1mSELECT * FROM "pics" WHERE ("pics"."viz" = 't') [0m
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://localhost/weddings]
+
+
+Processing MainController#namings (for 127.0.0.1 at 2010-06-19 12:13:58) [GET]
+Rendering template within layouts/application
+Rendering main/namings
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/namings]
+
+
+Processing MainController#funerals (for 127.0.0.1 at 2010-06-19 12:14:00) [GET]
+Rendering template within layouts/application
+Rendering main/funerals
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/funerals]
+
+
+Processing MainController#other (for 127.0.0.1 at 2010-06-19 12:14:00) [GET]
+Rendering template within layouts/application
+Rendering main/other
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/other]
+
+
+Processing MainController#contact (for 127.0.0.1 at 2010-06-19 12:14:02) [GET]
+Rendering template within layouts/application
+Rendering main/contact
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/contact]
+
+
+Processing MainController#namings (for 127.0.0.1 at 2010-06-19 12:14:03) [GET]
+Rendering template within layouts/application
+Rendering main/namings
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/namings]
+
+
+Processing MainController#namings (for 127.0.0.1 at 2010-06-19 12:14:50) [GET]
+Rendering template within layouts/application
+Rendering main/namings
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/namings]
+
+
+Processing MainController#namings (for 127.0.0.1 at 2010-06-19 12:14:51) [GET]
+Rendering template within layouts/application
+Rendering main/namings
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/namings]
+
+
+Processing MainController#funerals (for 127.0.0.1 at 2010-06-19 12:14:52) [GET]
+Rendering template within layouts/application
+Rendering main/funerals
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/funerals]
+
+
+Processing MainController#other (for 127.0.0.1 at 2010-06-19 12:14:53) [GET]
+Rendering template within layouts/application
+Rendering main/other
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/other]
+
+
+Processing MainController#weddings (for 127.0.0.1 at 2010-06-19 12:14:54) [GET]
+  [4;35;1mPic Load (0.4ms)[0m   [0mSELECT * FROM "pics" WHERE ("pics"."viz" = 't') [0m
+Rendering template within layouts/application
+Rendering main/weddings
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/weddings]
+
+
+Processing MainController#namings (for 127.0.0.1 at 2010-06-19 12:15:06) [GET]
+Rendering template within layouts/application
+Rendering main/namings
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/namings]
+
+
+Processing MainController#namings (for 127.0.0.1 at 2010-06-19 12:15:18) [GET]
+Rendering template within layouts/application
+Rendering main/namings
+Completed in 24ms (View: 23, DB: 0) | 200 OK [http://localhost/namings]
+
+
+Processing MainController#funerals (for 127.0.0.1 at 2010-06-19 12:15:20) [GET]
+Rendering template within layouts/application
+Rendering main/funerals
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://localhost/funerals]
+
+
+Processing MainController#other (for 127.0.0.1 at 2010-06-19 12:15:22) [GET]
+Rendering template within layouts/application
+Rendering main/other
+Completed in 53ms (View: 52, DB: 0) | 200 OK [http://localhost/other]
+
+
+Processing MainController#namings (for 127.0.0.1 at 2010-06-19 12:15:49) [GET]
+Rendering template within layouts/application
+Rendering main/namings
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/namings]
+
+
+Processing MainController#funerals (for 127.0.0.1 at 2010-06-19 12:15:52) [GET]
+Rendering template within layouts/application
+Rendering main/funerals
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/funerals]
+
+
+Processing MainController#other (for 127.0.0.1 at 2010-06-19 12:15:53) [GET]
+Rendering template within layouts/application
+Rendering main/other
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/other]
+
+
+Processing MainController#contact (for 127.0.0.1 at 2010-06-19 12:15:55) [GET]
+Rendering template within layouts/application
+Rendering main/contact
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://localhost/contact]
+
+
+Processing MainController#other (for 127.0.0.1 at 2010-06-19 12:15:57) [GET]
+Rendering template within layouts/application
+Rendering main/other
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/other]
+
+
+Processing MainController#other (for 127.0.0.1 at 2010-06-19 12:16:09) [GET]
+Rendering template within layouts/application
+Rendering main/other
+Completed in 33ms (View: 32, DB: 0) | 200 OK [http://localhost/other]
+
+
+Processing MainController#funerals (for 127.0.0.1 at 2010-06-19 12:16:11) [GET]
+Rendering template within layouts/application
+Rendering main/funerals
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/funerals]
+
+
+Processing MainController#namings (for 127.0.0.1 at 2010-06-19 12:16:13) [GET]
+Rendering template within layouts/application
+Rendering main/namings
+Completed in 10ms (View: 9, DB: 0) | 200 OK [http://localhost/namings]
+
+
+Processing MainController#contact (for 127.0.0.1 at 2010-06-19 12:20:27) [GET]
+Rendering template within layouts/application
+Rendering main/contact
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/contact]

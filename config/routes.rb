@@ -1,7 +1,17 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :pages
+
   map.resources :pics
 
   map.resources :photos
+  
+  map.connect 'weddings', :controller => "main", :action => "weddings" 
+  map.connect 'namings',  :controller => "main", :action => "namings" 
+  map.connect 'funerals', :controller => "main", :action => "funerals" 
+  map.connect 'other',    :controller => "main", :action => "other" 
+  map.connect 'contact',  :controller => "main", :action => "contact" 
+  
+ 
 
   # The priority is based upon order of creation: first created -> highest priority.
 
