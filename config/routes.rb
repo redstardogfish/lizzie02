@@ -7,6 +7,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :photos
   
+  map.root :controller => "main", :action => "index"
+  
   map.connect 'weddings', :controller => "main", :action => "weddings" 
   map.connect 'namings',  :controller => "main", :action => "namings" 
   map.connect 'funerals', :controller => "main", :action => "funerals" 
